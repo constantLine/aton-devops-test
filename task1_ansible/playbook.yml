@@ -1,0 +1,48 @@
+---
+- name: Configure Nginx web server
+  hosts: hostA
+  become: yes
+  vars_files:
+    - vars/main.yml
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Ensure Nginx configuration directory exists
+      file:
+        path: "{{ nginx_conf_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: Copy Nginx configuration file
+      template:
+        src: templates/nginx.conf.j2
+        dest: "{{ nginx_conf_dir }}/nginx.conf"
+        mode: '0644'
+      notify: Reload Nginx
+
+    - name: Ensure Nginx is running and enabled
+      systemd:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Check Nginx availability
+      uri:
+        url: "{{ nginx_test_url }}"
+        return_content: yes
+      register: nginx_status
+      failed_when: nginx_status.status != 200
+
+    - name: Display Nginx check result
+      debug:
+        msg: "Nginx is accessible at {{ nginx_test_url }} with status {{ nginx_status.status }}"
+
+  handlers:
+    - name: Reload Nginx
+      systemd:
+        name: nginx
+        state: reloaded
