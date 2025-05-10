@@ -1,0 +1,16 @@
+﻿2025-05-10T12:19:54.3653421Z Current runner version: '2.323.0'
+2025-05-10T12:19:54.3669645Z Runner name: 'YndxUbuntu'
+2025-05-10T12:19:54.3679046Z Machine name: 'YndxUbuntu'
+2025-05-10T12:19:54.3693286Z ##[group]GITHUB_TOKEN Permissions
+2025-05-10T12:19:54.3702159Z Contents: read
+2025-05-10T12:19:54.3703496Z Metadata: read
+2025-05-10T12:19:54.3704711Z Packages: read
+2025-05-10T12:19:54.3705782Z ##[endgroup]
+2025-05-10T12:19:54.3709467Z Secret source: Actions
+2025-05-10T12:19:54.3711233Z Prepare workflow directory
+2025-05-10T12:19:54.4387642Z Prepare all required actions
+2025-05-10T12:19:54.4433915Z Getting action download info
+2025-05-10T12:19:55.3063630Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-05-10T12:19:56.6509533Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+2025-05-10T12:19:58.1685634Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-05-10T12:20:00.6623835Z Complete job name: deploy

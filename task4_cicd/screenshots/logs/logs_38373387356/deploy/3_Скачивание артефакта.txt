@@ -1,0 +1,19 @@
+﻿2025-05-10T12:20:01.7891010Z ##[group]Run actions/download-artifact@v4
+2025-05-10T12:20:01.7891684Z with:
+2025-05-10T12:20:01.7892193Z   name: docker-image
+2025-05-10T12:20:01.7892659Z   path: .
+2025-05-10T12:20:01.7893384Z   merge-multiple: false
+2025-05-10T12:20:01.7893932Z   repository: constantLine/aton-devops-test
+2025-05-10T12:20:01.7894538Z   run-id: 14945264713
+2025-05-10T12:20:01.7894958Z ##[endgroup]
+2025-05-10T12:20:02.1140544Z Downloading single artifact
+2025-05-10T12:20:02.6714087Z Preparing to download the following artifacts:
+2025-05-10T12:20:02.6717267Z - docker-image (ID: 3099006273, Size: 70515944, Expected Digest: sha256:0f7bee7f39c54c67cce07c3ff0df1e970f937b5bed92d1fe7b9f718e557bf039)
+2025-05-10T12:20:03.0093169Z Redirecting to blob download url: https://productionresultssa7.blob.core.windows.net/actions-results/fb77b4a8-77e5-49c9-ad15-a51f2e0c31c1/workflow-job-run-c82631c4-bf33-5651-9594-c955a3593559/artifacts/d00d9db8955031cc609b4ecce7ceac843ed503a5f4fa84e72344ea36548494c6.zip
+2025-05-10T12:20:03.0096448Z Starting download of artifact to: /home/***/actions-runner/_work/aton-devops-test/aton-devops-test
+2025-05-10T12:20:03.6782689Z (node:47074) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2025-05-10T12:20:03.6785828Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-05-10T12:23:03.0935492Z SHA256 digest of downloaded artifact is 0f7bee7f39c54c67cce07c3ff0df1e970f937b5bed92d1fe7b9f718e557bf039
+2025-05-10T12:23:03.0953978Z Artifact download completed successfully.
+2025-05-10T12:23:03.0954921Z Total of 1 artifact(s) downloaded
+2025-05-10T12:23:03.0955701Z Download artifact has finished successfully

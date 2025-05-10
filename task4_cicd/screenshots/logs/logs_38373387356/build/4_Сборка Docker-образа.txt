@@ -1,0 +1,42 @@
+﻿2025-05-10T12:19:00.7976349Z ##[group]Run cd task2_docker
+2025-05-10T12:19:00.7976770Z [36;1mcd task2_docker[0m
+2025-05-10T12:19:00.7977111Z [36;1mdocker build -t nginx-test:latest .[0m
+2025-05-10T12:19:00.7994529Z shell: /usr/bin/bash -e {0}
+2025-05-10T12:19:00.7994861Z ##[endgroup]
+2025-05-10T12:19:01.2870253Z #0 building with "default" instance using docker driver
+2025-05-10T12:19:01.2870854Z 
+2025-05-10T12:19:01.2871678Z #1 [internal] load build definition from Dockerfile
+2025-05-10T12:19:01.2872267Z #1 transferring dockerfile: 449B done
+2025-05-10T12:19:02.3154892Z #1 DONE 0.0s
+2025-05-10T12:19:02.3155150Z 
+2025-05-10T12:19:02.3155489Z #2 [internal] load metadata for docker.io/library/nginx:latest
+2025-05-10T12:19:02.3156029Z #2 DONE 1.2s
+2025-05-10T12:19:02.4212394Z 
+2025-05-10T12:19:02.4214317Z #3 [internal] load .dockerignore
+2025-05-10T12:19:02.4225882Z #3 transferring context: 2B done
+2025-05-10T12:19:02.4227434Z #3 DONE 0.0s
+2025-05-10T12:19:02.4227609Z 
+2025-05-10T12:19:02.4229004Z #4 [1/5] FROM docker.io/library/nginx:latest@sha256:c15da6c91de8d2f436196f3a768483ad32c258ed4e1beb3d367a27ed67253e66
+2025-05-10T12:19:02.4230699Z #4 DONE 0.0s
+2025-05-10T12:19:02.4230974Z 
+2025-05-10T12:19:02.4231143Z #5 [internal] load build context
+2025-05-10T12:19:02.4231538Z #5 transferring context: 188B done
+2025-05-10T12:19:02.4231881Z #5 DONE 0.0s
+2025-05-10T12:19:02.4232015Z 
+2025-05-10T12:19:02.4232217Z #6 [2/5] COPY nginx.conf /etc/nginx/nginx.conf
+2025-05-10T12:19:02.4232682Z #6 CACHED
+2025-05-10T12:19:02.4232887Z 
+2025-05-10T12:19:02.4233312Z #7 [3/5] COPY certs/server.crt /etc/nginx/certs/server.crt
+2025-05-10T12:19:02.4234182Z #7 CACHED
+2025-05-10T12:19:02.4234390Z 
+2025-05-10T12:19:02.4234642Z #8 [4/5] COPY certs/server.key /etc/nginx/certs/server.key
+2025-05-10T12:19:02.4235090Z #8 CACHED
+2025-05-10T12:19:02.4235221Z 
+2025-05-10T12:19:02.4235475Z #9 [5/5] COPY html/index.html /usr/share/nginx/html/index.html
+2025-05-10T12:19:02.4235955Z #9 CACHED
+2025-05-10T12:19:02.4236074Z 
+2025-05-10T12:19:02.4236191Z #10 exporting to image
+2025-05-10T12:19:02.4236508Z #10 exporting layers done
+2025-05-10T12:19:02.4237270Z #10 writing image sha256:e13da11146ac55c371bd5e8da0017fdcedb71fe51576873793980b30ea104bcf done
+2025-05-10T12:19:02.4238155Z #10 naming to docker.io/library/nginx-test:latest done
+2025-05-10T12:19:02.4238609Z #10 DONE 0.0s

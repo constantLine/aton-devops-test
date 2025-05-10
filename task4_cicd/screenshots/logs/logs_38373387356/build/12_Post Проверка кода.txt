@@ -1,0 +1,13 @@
+﻿2025-05-10T12:19:38.3462928Z Post job cleanup.
+2025-05-10T12:19:38.4484437Z [command]/usr/bin/git version
+2025-05-10T12:19:38.4534692Z git version 2.43.0
+2025-05-10T12:19:38.4587722Z Copying '/home/constabz/.gitconfig' to '/home/constabz/actions-runner/_work/_temp/85769181-9f54-44e7-bef8-d5996f8972f2/.gitconfig'
+2025-05-10T12:19:38.4606675Z Temporarily overriding HOME='/home/constabz/actions-runner/_work/_temp/85769181-9f54-44e7-bef8-d5996f8972f2' before making global git config changes
+2025-05-10T12:19:38.4608556Z Adding repository directory to the temporary git global config as a safe directory
+2025-05-10T12:19:38.4611270Z [command]/usr/bin/git config --global --add safe.directory /home/constabz/actions-runner/_work/aton-devops-test/aton-devops-test
+2025-05-10T12:19:38.4667512Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-05-10T12:19:38.4714354Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-05-10T12:19:38.5095508Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-05-10T12:19:38.5126381Z http.https://github.com/.extraheader
+2025-05-10T12:19:38.5146957Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-05-10T12:19:38.5204196Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"

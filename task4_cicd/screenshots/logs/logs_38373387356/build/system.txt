@@ -1,0 +1,4 @@
+2025-05-10T12:18:49.5435100Z Requested labels: self-hosted
+2025-05-10T12:18:49.5435100Z Job defined at: constantLine/aton-devops-test/.github/workflows/ci-cd.yml@refs/heads/main
+2025-05-10T12:18:49.5435100Z Waiting for a runner to pick up this job...
+2025-05-10T12:18:49.6801311Z Job is about to start running on the runner: YndxUbuntu

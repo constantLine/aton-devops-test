@@ -1,0 +1,4 @@
+﻿2025-05-10T12:19:02.4391470Z ##[group]Run docker save nginx-test:latest | gzip > nginx-test.tar.gz
+2025-05-10T12:19:02.4392301Z [36;1mdocker save nginx-test:latest | gzip > nginx-test.tar.gz[0m
+2025-05-10T12:19:02.4404508Z shell: /usr/bin/bash -e {0}
+2025-05-10T12:19:02.4404828Z ##[endgroup]

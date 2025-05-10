@@ -1,0 +1,402 @@
+﻿2025-05-10T12:18:48.5164158Z Current runner version: '2.323.0'
+2025-05-10T12:18:48.5171135Z Runner name: 'YndxUbuntu'
+2025-05-10T12:18:48.5172245Z Machine name: 'YndxUbuntu'
+2025-05-10T12:18:48.5175136Z ##[group]GITHUB_TOKEN Permissions
+2025-05-10T12:18:48.5177334Z Contents: read
+2025-05-10T12:18:48.5177844Z Metadata: read
+2025-05-10T12:18:48.5183544Z Packages: read
+2025-05-10T12:18:48.5186234Z ##[endgroup]
+2025-05-10T12:18:48.5190176Z Secret source: Actions
+2025-05-10T12:18:48.5191130Z Prepare workflow directory
+2025-05-10T12:18:48.6231333Z Prepare all required actions
+2025-05-10T12:18:48.6277771Z Getting action download info
+2025-05-10T12:18:49.4927498Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-05-10T12:18:50.7076937Z Download action repository 'docker/setup-buildx-action@v2' (SHA:885d1462b80bc1c1c7f0b00334ad271f09369c55)
+2025-05-10T12:18:52.3073983Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-05-10T12:18:54.7561930Z Complete job name: build
+2025-05-10T12:18:54.8691283Z ##[group]Run actions/checkout@v3
+2025-05-10T12:18:54.8691953Z with:
+2025-05-10T12:18:54.8692232Z   repository: constantLine/aton-devops-test
+2025-05-10T12:18:54.8692877Z   token: ***
+2025-05-10T12:18:54.8693101Z   ssh-strict: true
+2025-05-10T12:18:54.8693363Z   persist-credentials: true
+2025-05-10T12:18:54.8693658Z   clean: true
+2025-05-10T12:18:54.8693907Z   sparse-checkout-cone-mode: true
+2025-05-10T12:18:54.8694242Z   fetch-depth: 1
+2025-05-10T12:18:54.8694484Z   fetch-tags: false
+2025-05-10T12:18:54.8694723Z   lfs: false
+2025-05-10T12:18:54.8694950Z   submodules: false
+2025-05-10T12:18:54.8695216Z   set-safe-directory: true
+2025-05-10T12:18:54.8695809Z ##[endgroup]
+2025-05-10T12:18:54.9933773Z Syncing repository: constantLine/aton-devops-test
+2025-05-10T12:18:54.9935704Z ##[group]Getting Git version info
+2025-05-10T12:18:54.9936601Z Working directory is '/home/constabz/actions-runner/_work/aton-devops-test/aton-devops-test'
+2025-05-10T12:18:54.9938160Z [command]/usr/bin/git version
+2025-05-10T12:18:54.9950549Z git version 2.43.0
+2025-05-10T12:18:54.9987238Z ##[endgroup]
+2025-05-10T12:18:55.0005489Z Copying '/home/constabz/.gitconfig' to '/home/constabz/actions-runner/_work/_temp/c27331f5-9c5f-44b2-bb2c-451ada4e4f6f/.gitconfig'
+2025-05-10T12:18:55.0027715Z Temporarily overriding HOME='/home/constabz/actions-runner/_work/_temp/c27331f5-9c5f-44b2-bb2c-451ada4e4f6f' before making global git config changes
+2025-05-10T12:18:55.0030386Z Adding repository directory to the temporary git global config as a safe directory
+2025-05-10T12:18:55.0037106Z [command]/usr/bin/git config --global --add safe.directory /home/constabz/actions-runner/_work/aton-devops-test/aton-devops-test
+2025-05-10T12:18:55.0093494Z [command]/usr/bin/git config --local --get remote.origin.url
+2025-05-10T12:18:55.0133911Z https://github.com/constantLine/aton-devops-test
+2025-05-10T12:18:55.0172608Z ##[group]Removing previously created refs, to avoid conflicts
+2025-05-10T12:18:55.0176265Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2025-05-10T12:18:55.0225248Z refs/heads/main
+2025-05-10T12:18:55.0237490Z [command]/usr/bin/git checkout --detach
+2025-05-10T12:18:55.0364220Z HEAD сейчас на 4a428e1 Change runner to self-hosted
+2025-05-10T12:18:55.0427697Z [command]/usr/bin/git branch --delete --force main
+2025-05-10T12:18:55.0482759Z Ветка main удалена (была 4a428e1).
+2025-05-10T12:18:55.0550020Z ##[endgroup]
+2025-05-10T12:18:55.0552013Z [command]/usr/bin/git submodule status
+2025-05-10T12:18:55.1012902Z ##[group]Cleaning the repository
+2025-05-10T12:18:55.1016492Z [command]/usr/bin/git clean -ffdx
+2025-05-10T12:18:55.1312582Z Удаление nginx-test.tar.gz
+2025-05-10T12:18:55.1313124Z Удаление private_key
+2025-05-10T12:18:55.1313548Z Удаление task4_cicd/screenshots/curl_output.txt
+2025-05-10T12:18:55.1314047Z Удаление task4_cicd/screenshots/http_code.txt
+2025-05-10T12:18:55.1314546Z Удаление task4_cicd/screenshots/nginx_logs.txt
+2025-05-10T12:18:55.1324544Z [command]/usr/bin/git reset --hard HEAD
+2025-05-10T12:18:55.1386063Z Указатель HEAD сейчас на коммите 4a428e1 Change runner to self-hosted
+2025-05-10T12:18:55.1394249Z ##[endgroup]
+2025-05-10T12:18:55.1396369Z ##[group]Disabling automatic garbage collection
+2025-05-10T12:18:55.1399761Z [command]/usr/bin/git config --local gc.auto 0
+2025-05-10T12:18:55.1445431Z ##[endgroup]
+2025-05-10T12:18:55.1446237Z ##[group]Setting up auth
+2025-05-10T12:18:55.1459403Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-05-10T12:18:55.1526518Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-05-10T12:18:55.2069927Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-05-10T12:18:55.2111560Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-05-10T12:18:55.2582691Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-05-10T12:18:55.2659253Z ##[endgroup]
+2025-05-10T12:18:55.2660502Z ##[group]Fetching the repository
+2025-05-10T12:18:55.2668257Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +3a6c33873f4ff7786630c8cbb89959f6254579ff:refs/remotes/origin/main
+2025-05-10T12:18:55.8646247Z remote: Enumerating objects: 9, done.        
+2025-05-10T12:18:55.8649090Z remote: Counting objects:  11% (1/9)        
+2025-05-10T12:18:55.8656215Z remote: Counting objects:  22% (2/9)        
+2025-05-10T12:18:55.8657128Z remote: Counting objects:  33% (3/9)        
+2025-05-10T12:18:55.8657936Z remote: Counting objects:  44% (4/9)        
+2025-05-10T12:18:55.8658743Z remote: Counting objects:  55% (5/9)        
+2025-05-10T12:18:55.8659609Z remote: Counting objects:  66% (6/9)        
+2025-05-10T12:18:55.8660442Z remote: Counting objects:  77% (7/9)        
+2025-05-10T12:18:55.8661240Z remote: Counting objects:  88% (8/9)        
+2025-05-10T12:18:55.8662045Z remote: Counting objects: 100% (9/9)        
+2025-05-10T12:18:55.8662920Z remote: Counting objects: 100% (9/9), done.        
+2025-05-10T12:18:55.8664172Z remote: Compressing objects:  33% (1/3)        
+2025-05-10T12:18:55.8666108Z remote: Compressing objects:  66% (2/3)        
+2025-05-10T12:18:55.8668525Z remote: Compressing objects: 100% (3/3)        
+2025-05-10T12:18:55.8670804Z remote: Compressing objects: 100% (3/3), done.        
+2025-05-10T12:18:55.8678554Z remote: Total 5 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)        
+2025-05-10T12:18:55.8840959Z Из https://github.com/constantLine/aton-devops-test
+2025-05-10T12:18:55.8842243Z  + 4a428e1...3a6c338 3a6c33873f4ff7786630c8cbb89959f6254579ff -> origin/main  (принудительное обновление)
+2025-05-10T12:18:55.8900678Z ##[endgroup]
+2025-05-10T12:18:55.8901348Z ##[group]Determining the checkout info
+2025-05-10T12:18:55.8901969Z ##[endgroup]
+2025-05-10T12:18:55.8902457Z ##[group]Checking out the ref
+2025-05-10T12:18:55.8903236Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-05-10T12:18:55.8985740Z Предупреждение: позади остался 1 коммит, не связанный ни с одной из веток:
+2025-05-10T12:18:55.8988694Z 
+2025-05-10T12:18:55.8989163Z   4a428e1 Change runner to self-hosted
+2025-05-10T12:18:55.8989674Z 
+2025-05-10T12:18:55.8990111Z Если хотите сохранить его в новую ветку, то сейчас самое время для команды:
+2025-05-10T12:18:55.8996029Z 
+2025-05-10T12:18:55.8996330Z  git branch <имя-новой-ветки> 4a428e1
+2025-05-10T12:18:55.8996610Z 
+2025-05-10T12:18:55.8996780Z Переключились на новую ветку «main»
+2025-05-10T12:18:55.8997242Z branch 'main' set up to track 'origin/main'.
+2025-05-10T12:18:55.9006457Z ##[endgroup]
+2025-05-10T12:18:55.9068891Z [command]/usr/bin/git log -1 --format='%H'
+2025-05-10T12:18:55.9106974Z '3a6c33873f4ff7786630c8cbb89959f6254579ff'
+2025-05-10T12:18:55.9363947Z ##[group]Run docker/setup-buildx-action@v2
+2025-05-10T12:18:55.9364360Z with:
+2025-05-10T12:18:55.9364577Z   driver: docker-container
+2025-05-10T12:18:55.9365415Z   buildkitd-flags: --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host
+2025-05-10T12:18:55.9366284Z   install: false
+2025-05-10T12:18:55.9366507Z   use: true
+2025-05-10T12:18:55.9366704Z   cleanup: true
+2025-05-10T12:18:55.9366926Z ##[endgroup]
+2025-05-10T12:18:56.1486674Z ##[group]Docker info
+2025-05-10T12:18:56.1513174Z [command]/usr/bin/docker version
+2025-05-10T12:18:56.2736302Z Client:
+2025-05-10T12:18:56.2737299Z  Version:           26.1.3
+2025-05-10T12:18:56.2738189Z  API version:       1.45
+2025-05-10T12:18:56.2739104Z  Go version:        go1.22.2
+2025-05-10T12:18:56.2740015Z  Git commit:        26.1.3-0ubuntu1~24.04.1
+2025-05-10T12:18:56.2741000Z  Built:             Mon Oct 14 14:29:26 2024
+2025-05-10T12:18:56.2741950Z  OS/Arch:           linux/amd64
+2025-05-10T12:18:56.2742919Z  Context:           default
+2025-05-10T12:18:56.2743596Z 
+2025-05-10T12:18:56.2743909Z Server:
+2025-05-10T12:18:56.2744133Z  Engine:
+2025-05-10T12:18:56.2744382Z   Version:          26.1.3
+2025-05-10T12:18:56.2744764Z   API version:      1.45 (minimum version 1.24)
+2025-05-10T12:18:56.2745433Z   Go version:       go1.22.2
+2025-05-10T12:18:56.2745989Z   Git commit:       26.1.3-0ubuntu1~24.04.1
+2025-05-10T12:18:56.2746649Z   Built:            Mon Oct 14 14:29:26 2024
+2025-05-10T12:18:56.2747268Z   OS/Arch:          linux/amd64
+2025-05-10T12:18:56.2747628Z   Experimental:     false
+2025-05-10T12:18:56.2747934Z  containerd:
+2025-05-10T12:18:56.2748189Z   Version:          1.7.24
+2025-05-10T12:18:56.2748494Z   GitCommit:        
+2025-05-10T12:18:56.2748755Z  runc:
+2025-05-10T12:18:56.2749046Z   Version:          1.1.12-0ubuntu3.1
+2025-05-10T12:18:56.2749411Z   GitCommit:        
+2025-05-10T12:18:56.2749687Z  docker-init:
+2025-05-10T12:18:56.2749941Z   Version:          0.19.0
+2025-05-10T12:18:56.2750270Z   GitCommit:        
+2025-05-10T12:18:56.2791894Z [command]/usr/bin/docker info
+2025-05-10T12:18:56.6386839Z Client:
+2025-05-10T12:18:56.6390715Z  Version:    26.1.3
+2025-05-10T12:18:56.6391009Z  Context:    default
+2025-05-10T12:18:56.6391297Z  Debug Mode: false
+2025-05-10T12:18:56.6391565Z  Plugins:
+2025-05-10T12:18:56.6391874Z   buildx: Docker Buildx (Docker Inc.)
+2025-05-10T12:18:56.6392272Z     Version:  v0.23.0
+2025-05-10T12:18:56.6392704Z     Path:     /home/constabz/.docker/cli-plugins/docker-buildx
+2025-05-10T12:18:56.6393100Z 
+2025-05-10T12:18:56.6393199Z Server:
+2025-05-10T12:18:56.6393421Z  Containers: 0
+2025-05-10T12:18:56.6393669Z   Running: 0
+2025-05-10T12:18:56.6393917Z   Paused: 0
+2025-05-10T12:18:56.6394150Z   Stopped: 0
+2025-05-10T12:18:56.6394377Z  Images: 2
+2025-05-10T12:18:56.6394627Z  Server Version: 26.1.3
+2025-05-10T12:18:56.6394946Z  Storage Driver: overlay2
+2025-05-10T12:18:56.6395289Z   Backing Filesystem: extfs
+2025-05-10T12:18:56.6395656Z   Supports d_type: true
+2025-05-10T12:18:56.6395996Z   Using metacopy: false
+2025-05-10T12:18:56.6396326Z   Native Overlay Diff: true
+2025-05-10T12:18:56.6396655Z   userxattr: false
+2025-05-10T12:18:56.6397077Z  Logging Driver: json-file
+2025-05-10T12:18:56.6397671Z  Cgroup Driver: systemd
+2025-05-10T12:18:56.6398002Z  Cgroup Version: 2
+2025-05-10T12:18:56.6404294Z  Plugins:
+2025-05-10T12:18:56.6404558Z   Volume: local
+2025-05-10T12:18:56.6404930Z   Network: bridge host ipvlan macvlan null overlay
+2025-05-10T12:18:56.6407456Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2025-05-10T12:18:56.6408364Z  Swarm: inactive
+2025-05-10T12:18:56.6408844Z  Runtimes: io.containerd.runc.v2 runc
+2025-05-10T12:18:56.6409479Z  Default Runtime: runc
+2025-05-10T12:18:56.6410051Z  Init Binary: docker-init
+2025-05-10T12:18:56.6410575Z  containerd version: 
+2025-05-10T12:18:56.6410990Z  runc version: 
+2025-05-10T12:18:56.6411368Z  init version: 
+2025-05-10T12:18:56.6411769Z  Security Options:
+2025-05-10T12:18:56.6412760Z   apparmor
+2025-05-10T12:18:56.6413334Z   seccomp
+2025-05-10T12:18:56.6417423Z    Profile: builtin
+2025-05-10T12:18:56.6418624Z   cgroupns
+2025-05-10T12:18:56.6420421Z  Kernel Version: 6.8.0-39-generic
+2025-05-10T12:18:56.6422243Z  Operating System: Ubuntu 24.04 LTS
+2025-05-10T12:18:56.6422914Z  OSType: linux
+2025-05-10T12:18:56.6423274Z  Architecture: x86_64
+2025-05-10T12:18:56.6423552Z  CPUs: 3
+2025-05-10T12:18:56.6423809Z  Total Memory: 5.678GiB
+2025-05-10T12:18:56.6425059Z  Name: YndxUbuntu
+2025-05-10T12:18:56.6425460Z  ID: c740cd34-afd9-4e40-9898-e412e889eb6a
+2025-05-10T12:18:56.6425883Z  Docker Root Dir: /var/lib/docker
+2025-05-10T12:18:56.6426246Z  Debug Mode: false
+2025-05-10T12:18:56.6426521Z  Experimental: false
+2025-05-10T12:18:56.6426817Z  Insecure Registries:
+2025-05-10T12:18:56.6427091Z   127.0.0.0/8
+2025-05-10T12:18:56.6427364Z  Live Restore Enabled: false
+2025-05-10T12:18:56.6427595Z 
+2025-05-10T12:18:56.6428333Z ##[endgroup]
+2025-05-10T12:18:56.7683134Z ##[group]Buildx version
+2025-05-10T12:18:56.7717715Z [command]/usr/bin/docker buildx version
+2025-05-10T12:18:56.8861600Z github.com/docker/buildx v0.23.0 28c90eadc4c12cc78155ad59ca5f486220241d2a
+2025-05-10T12:18:56.8901717Z ##[endgroup]
+2025-05-10T12:18:56.8922458Z ##[group]Creating a new builder instance
+2025-05-10T12:18:56.9890564Z [command]/usr/bin/docker buildx create --name builder-7bd8a832-b5ee-4f69-8aaa-806c94f9cd39 --driver docker-container --buildkitd-flags --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host --use
+2025-05-10T12:18:57.1263876Z builder-7bd8a832-b5ee-4f69-8aaa-806c94f9cd39
+2025-05-10T12:18:57.1355298Z ##[endgroup]
+2025-05-10T12:18:57.1356537Z ##[group]Booting builder
+2025-05-10T12:18:57.1406313Z [command]/usr/bin/docker buildx inspect --bootstrap --builder builder-7bd8a832-b5ee-4f69-8aaa-806c94f9cd39
+2025-05-10T12:18:57.2739861Z #1 [internal] booting buildkit
+2025-05-10T12:18:57.4313428Z #1 pulling image moby/buildkit:buildx-stable-1
+2025-05-10T12:18:58.9677522Z #1 pulling image moby/buildkit:buildx-stable-1 1.7s done
+2025-05-10T12:18:59.1166766Z #1 creating container buildx_buildkit_builder-7bd8a832-b5ee-4f69-8aaa-806c94f9cd390
+2025-05-10T12:18:59.8556381Z #1 creating container buildx_buildkit_builder-7bd8a832-b5ee-4f69-8aaa-806c94f9cd390 0.9s done
+2025-05-10T12:18:59.8618792Z #1 DONE 2.6s
+2025-05-10T12:18:59.9391665Z Name:          builder-7bd8a832-b5ee-4f69-8aaa-806c94f9cd39
+2025-05-10T12:18:59.9414957Z Driver:        docker-container
+2025-05-10T12:18:59.9415387Z Last Activity: 2025-05-10 12:18:57 +0000 UTC
+2025-05-10T12:18:59.9415692Z 
+2025-05-10T12:18:59.9415784Z Nodes:
+2025-05-10T12:18:59.9416146Z Name:                  builder-7bd8a832-b5ee-4f69-8aaa-806c94f9cd390
+2025-05-10T12:18:59.9416743Z Endpoint:              unix:///var/run/docker.sock
+2025-05-10T12:18:59.9417203Z Status:                running
+2025-05-10T12:18:59.9418143Z BuildKit daemon flags: --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host
+2025-05-10T12:18:59.9419144Z BuildKit version:      v0.21.1
+2025-05-10T12:18:59.9419636Z Platforms:             linux/amd64, linux/amd64/v2, linux/386
+2025-05-10T12:18:59.9420119Z Labels:
+2025-05-10T12:18:59.9420488Z  org.mobyproject.buildkit.worker.executor:         oci
+2025-05-10T12:18:59.9421201Z  org.mobyproject.buildkit.worker.hostname:         d1bdbd00b11b
+2025-05-10T12:18:59.9432689Z  org.mobyproject.buildkit.worker.network:          host
+2025-05-10T12:18:59.9433468Z  org.mobyproject.buildkit.worker.oci.process-mode: sandbox
+2025-05-10T12:18:59.9434201Z  org.mobyproject.buildkit.worker.selinux.enabled:  false
+2025-05-10T12:18:59.9434941Z  org.mobyproject.buildkit.worker.snapshotter:      overlayfs
+2025-05-10T12:18:59.9435527Z GC Policy rule#0:
+2025-05-10T12:18:59.9435797Z  All:            false
+2025-05-10T12:18:59.9436369Z  Filters:        type==source.local,type==exec.cachemount,type==source.git.checkout
+2025-05-10T12:18:59.9438025Z  Keep Duration:  48h0m0s
+2025-05-10T12:18:59.9438736Z  Max Used Space: 488.3MiB
+2025-05-10T12:18:59.9440272Z GC Policy rule#1:
+2025-05-10T12:18:59.9440740Z  All:            false
+2025-05-10T12:18:59.9441060Z  Keep Duration:  1440h0m0s
+2025-05-10T12:18:59.9441438Z  Reserved Space: 2.794GiB
+2025-05-10T12:18:59.9441773Z  Max Used Space: 18.63GiB
+2025-05-10T12:18:59.9442094Z  Min Free Space: 4.657GiB
+2025-05-10T12:18:59.9442408Z GC Policy rule#2:
+2025-05-10T12:18:59.9442666Z  All:            false
+2025-05-10T12:18:59.9442973Z  Reserved Space: 2.794GiB
+2025-05-10T12:18:59.9443299Z  Max Used Space: 18.63GiB
+2025-05-10T12:18:59.9443629Z  Min Free Space: 4.657GiB
+2025-05-10T12:18:59.9443934Z GC Policy rule#3:
+2025-05-10T12:18:59.9444206Z  All:            true
+2025-05-10T12:18:59.9444492Z  Reserved Space: 2.794GiB
+2025-05-10T12:18:59.9444821Z  Max Used Space: 18.63GiB
+2025-05-10T12:18:59.9445161Z  Min Free Space: 4.657GiB
+2025-05-10T12:18:59.9447305Z ##[endgroup]
+2025-05-10T12:19:00.1271139Z ##[group]Inspect builder
+2025-05-10T12:19:00.1340138Z {
+2025-05-10T12:19:00.1340505Z   "nodes": [
+2025-05-10T12:19:00.1340762Z     {
+2025-05-10T12:19:00.1341147Z       "name": "builder-7bd8a832-b5ee-4f69-8aaa-806c94f9cd390",
+2025-05-10T12:19:00.1341708Z       "endpoint": "unix:///var/run/docker.sock",
+2025-05-10T12:19:00.1342310Z       "status": "running",
+2025-05-10T12:19:00.1343260Z       "platforms": "linux/amd64,linux/amd64/v2,linux/386",
+2025-05-10T12:19:00.1344652Z       "labels": {
+2025-05-10T12:19:00.1345552Z         "org.mobyproject.buildkit.worker.executor": "oci",
+2025-05-10T12:19:00.1346268Z         "org.mobyproject.buildkit.worker.hostname": "d1bdbd00b11b",
+2025-05-10T12:19:00.1347302Z         "org.mobyproject.buildkit.worker.network": "host",
+2025-05-10T12:19:00.1350021Z         "org.mobyproject.buildkit.worker.oci.process-mode": "sandbox",
+2025-05-10T12:19:00.1350776Z         "org.mobyproject.buildkit.worker.selinux.enabled": "false",
+2025-05-10T12:19:00.1351493Z         "org.mobyproject.buildkit.worker.snapshotter": "overlayfs"
+2025-05-10T12:19:00.1352002Z       },
+2025-05-10T12:19:00.1352217Z       "gcPolicy": [
+2025-05-10T12:19:00.1352473Z         {
+2025-05-10T12:19:00.1352696Z           "all": false,
+2025-05-10T12:19:00.1352967Z           "filter": [
+2025-05-10T12:19:00.1353249Z             "type==source.local",
+2025-05-10T12:19:00.1353618Z             "type==exec.cachemount",
+2025-05-10T12:19:00.1354006Z             "type==source.git.checkout"
+2025-05-10T12:19:00.1354363Z           ],
+2025-05-10T12:19:00.1354615Z           "keepDuration": "48h0m0s"
+2025-05-10T12:19:00.1354946Z         },
+2025-05-10T12:19:00.1355138Z         {
+2025-05-10T12:19:00.1355355Z           "all": false,
+2025-05-10T12:19:00.1355663Z           "keepDuration": "1440h0m0s"
+2025-05-10T12:19:00.1355999Z         },
+2025-05-10T12:19:00.1356195Z         {
+2025-05-10T12:19:00.1356402Z           "all": false
+2025-05-10T12:19:00.1356656Z         },
+2025-05-10T12:19:00.1356844Z         {
+2025-05-10T12:19:00.1357055Z           "all": true
+2025-05-10T12:19:00.1357293Z         }
+2025-05-10T12:19:00.1357485Z       ]
+2025-05-10T12:19:00.1357667Z     }
+2025-05-10T12:19:00.1357859Z   ],
+2025-05-10T12:19:00.1358191Z   "name": "builder-7bd8a832-b5ee-4f69-8aaa-806c94f9cd39",
+2025-05-10T12:19:00.1358680Z   "driver": "docker-container",
+2025-05-10T12:19:00.1359056Z   "lastActivity": "2025-05-10T12:18:57.000Z"
+2025-05-10T12:19:00.1359412Z }
+2025-05-10T12:19:00.1360415Z ##[endgroup]
+2025-05-10T12:19:00.1361029Z ##[group]BuildKit version
+2025-05-10T12:19:00.7836096Z builder-7bd8a832-b5ee-4f69-8aaa-806c94f9cd390: moby/buildkit:buildx-stable-1 => buildkitd github.com/moby/buildkit v0.21.1 66735c67040bc80e6ed104f451683e094030a4e1
+2025-05-10T12:19:00.7842806Z ##[endgroup]
+2025-05-10T12:19:00.7976367Z ##[group]Run cd task2_docker
+2025-05-10T12:19:00.7976774Z [36;1mcd task2_docker[0m
+2025-05-10T12:19:00.7977114Z [36;1mdocker build -t nginx-test:latest .[0m
+2025-05-10T12:19:00.7994543Z shell: /usr/bin/bash -e {0}
+2025-05-10T12:19:00.7994863Z ##[endgroup]
+2025-05-10T12:19:01.2870311Z #0 building with "default" instance using docker driver
+2025-05-10T12:19:01.2870857Z 
+2025-05-10T12:19:01.2871689Z #1 [internal] load build definition from Dockerfile
+2025-05-10T12:19:01.2872270Z #1 transferring dockerfile: 449B done
+2025-05-10T12:19:02.3154955Z #1 DONE 0.0s
+2025-05-10T12:19:02.3155153Z 
+2025-05-10T12:19:02.3155491Z #2 [internal] load metadata for docker.io/library/nginx:latest
+2025-05-10T12:19:02.3156032Z #2 DONE 1.2s
+2025-05-10T12:19:02.4212492Z 
+2025-05-10T12:19:02.4214326Z #3 [internal] load .dockerignore
+2025-05-10T12:19:02.4225966Z #3 transferring context: 2B done
+2025-05-10T12:19:02.4227451Z #3 DONE 0.0s
+2025-05-10T12:19:02.4227612Z 
+2025-05-10T12:19:02.4229197Z #4 [1/5] FROM docker.io/library/nginx:latest@sha256:c15da6c91de8d2f436196f3a768483ad32c258ed4e1beb3d367a27ed67253e66
+2025-05-10T12:19:02.4230708Z #4 DONE 0.0s
+2025-05-10T12:19:02.4230981Z 
+2025-05-10T12:19:02.4231146Z #5 [internal] load build context
+2025-05-10T12:19:02.4231540Z #5 transferring context: 188B done
+2025-05-10T12:19:02.4231884Z #5 DONE 0.0s
+2025-05-10T12:19:02.4232017Z 
+2025-05-10T12:19:02.4232220Z #6 [2/5] COPY nginx.conf /etc/nginx/nginx.conf
+2025-05-10T12:19:02.4232689Z #6 CACHED
+2025-05-10T12:19:02.4232894Z 
+2025-05-10T12:19:02.4233319Z #7 [3/5] COPY certs/server.crt /etc/nginx/certs/server.crt
+2025-05-10T12:19:02.4234190Z #7 CACHED
+2025-05-10T12:19:02.4234397Z 
+2025-05-10T12:19:02.4234644Z #8 [4/5] COPY certs/server.key /etc/nginx/certs/server.key
+2025-05-10T12:19:02.4235102Z #8 CACHED
+2025-05-10T12:19:02.4235223Z 
+2025-05-10T12:19:02.4235478Z #9 [5/5] COPY html/index.html /usr/share/nginx/html/index.html
+2025-05-10T12:19:02.4235957Z #9 CACHED
+2025-05-10T12:19:02.4236076Z 
+2025-05-10T12:19:02.4236202Z #10 exporting to image
+2025-05-10T12:19:02.4236511Z #10 exporting layers done
+2025-05-10T12:19:02.4237272Z #10 writing image sha256:e13da11146ac55c371bd5e8da0017fdcedb71fe51576873793980b30ea104bcf done
+2025-05-10T12:19:02.4238158Z #10 naming to docker.io/library/nginx-test:latest done
+2025-05-10T12:19:02.4238612Z #10 DONE 0.0s
+2025-05-10T12:19:02.4391490Z ##[group]Run docker save nginx-test:latest | gzip > nginx-test.tar.gz
+2025-05-10T12:19:02.4392305Z [36;1mdocker save nginx-test:latest | gzip > nginx-test.tar.gz[0m
+2025-05-10T12:19:02.4404518Z shell: /usr/bin/bash -e {0}
+2025-05-10T12:19:02.4404831Z ##[endgroup]
+2025-05-10T12:19:17.8466077Z ##[group]Run actions/upload-artifact@v4
+2025-05-10T12:19:17.8466820Z with:
+2025-05-10T12:19:17.8467042Z   name: docker-image
+2025-05-10T12:19:17.8467312Z   path: nginx-test.tar.gz
+2025-05-10T12:19:17.8467614Z   if-no-files-found: warn
+2025-05-10T12:19:17.8467903Z   compression-level: 6
+2025-05-10T12:19:17.8468171Z   overwrite: false
+2025-05-10T12:19:17.8468424Z   include-hidden-files: false
+2025-05-10T12:19:17.8468736Z ##[endgroup]
+2025-05-10T12:19:18.1567642Z With the provided path, there will be 1 file uploaded
+2025-05-10T12:19:18.1574299Z Artifact name is valid!
+2025-05-10T12:19:18.1576148Z Root directory input is valid!
+2025-05-10T12:19:18.7138966Z Beginning upload of artifact content to blob storage
+2025-05-10T12:19:22.6196170Z Uploaded bytes 8388608
+2025-05-10T12:19:23.7728303Z Uploaded bytes 16777216
+2025-05-10T12:19:24.1653427Z Uploaded bytes 25165824
+2025-05-10T12:19:25.9168311Z Uploaded bytes 33554432
+2025-05-10T12:19:26.1373102Z Uploaded bytes 41943040
+2025-05-10T12:19:27.2354924Z Uploaded bytes 50331648
+2025-05-10T12:19:27.8326309Z Uploaded bytes 58720256
+2025-05-10T12:19:34.5595211Z Uploaded bytes 67108864
+2025-05-10T12:19:36.8682420Z Uploaded bytes 70515944
+2025-05-10T12:19:37.0378224Z Finished uploading artifact content to blob storage!
+2025-05-10T12:19:37.0384183Z SHA256 digest of uploaded artifact zip is 0f7bee7f39c54c67cce07c3ff0df1e970f937b5bed92d1fe7b9f718e557bf039
+2025-05-10T12:19:37.0435303Z Finalizing artifact upload
+2025-05-10T12:19:37.5703233Z Artifact docker-image.zip successfully finalized. Artifact ID 3099006273
+2025-05-10T12:19:37.5722789Z Artifact docker-image has been successfully uploaded! Final size is 70515944 bytes. Artifact ID is 3099006273
+2025-05-10T12:19:37.5733503Z Artifact download URL: https://github.com/constantLine/aton-devops-test/actions/runs/14945264713/artifacts/3099006273
+2025-05-10T12:19:37.5947614Z Post job cleanup.
+2025-05-10T12:19:37.7713671Z ##[group]Removing builder
+2025-05-10T12:19:38.0084742Z [command]/usr/bin/docker buildx rm builder-7bd8a832-b5ee-4f69-8aaa-806c94f9cd39
+2025-05-10T12:19:38.3248530Z builder-7bd8a832-b5ee-4f69-8aaa-806c94f9cd39 removed
+2025-05-10T12:19:38.3286789Z ##[endgroup]
+2025-05-10T12:19:38.3287775Z ##[group]Cleaning up certificates
+2025-05-10T12:19:38.3296184Z ##[endgroup]
+2025-05-10T12:19:38.3462948Z Post job cleanup.
+2025-05-10T12:19:38.4484473Z [command]/usr/bin/git version
+2025-05-10T12:19:38.4534730Z git version 2.43.0
+2025-05-10T12:19:38.4587761Z Copying '/home/constabz/.gitconfig' to '/home/constabz/actions-runner/_work/_temp/85769181-9f54-44e7-bef8-d5996f8972f2/.gitconfig'
+2025-05-10T12:19:38.4606702Z Temporarily overriding HOME='/home/constabz/actions-runner/_work/_temp/85769181-9f54-44e7-bef8-d5996f8972f2' before making global git config changes
+2025-05-10T12:19:38.4608560Z Adding repository directory to the temporary git global config as a safe directory
+2025-05-10T12:19:38.4611280Z [command]/usr/bin/git config --global --add safe.directory /home/constabz/actions-runner/_work/aton-devops-test/aton-devops-test
+2025-05-10T12:19:38.4667549Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-05-10T12:19:38.4714463Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-05-10T12:19:38.5095544Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-05-10T12:19:38.5126412Z http.https://github.com/.extraheader
+2025-05-10T12:19:38.5146989Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-05-10T12:19:38.5204223Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-05-10T12:19:38.5742997Z Cleaning up orphan processes

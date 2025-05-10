@@ -1,0 +1,66 @@
+﻿2025-05-10T12:23:03.1151786Z ##[group]Run echo "$SSH_PRIVATE_KEY" > private_key
+2025-05-10T12:23:03.1152889Z [36;1mecho "$SSH_PRIVATE_KEY" > private_key[0m
+2025-05-10T12:23:03.1153516Z [36;1mchmod 600 private_key[0m
+2025-05-10T12:23:03.1154467Z [36;1mscp -i private_key nginx-test.tar.gz $VM_USER@$VM_HOST:/home/$VM_USER/[0m
+2025-05-10T12:23:03.1155899Z [36;1mssh -i private_key $VM_USER@$VM_HOST << 'EOF'[0m
+2025-05-10T12:23:03.1156663Z [36;1m  docker load < nginx-test.tar.gz[0m
+2025-05-10T12:23:03.1157269Z [36;1m  rm nginx-test.tar.gz[0m
+2025-05-10T12:23:03.1157833Z [36;1m  docker stop nginx-test || true[0m
+2025-05-10T12:23:03.1158579Z [36;1m  docker rm nginx-test || true[0m
+2025-05-10T12:23:03.1159403Z [36;1m  docker run -d --name nginx-test -p 80:80 -p 443:443 nginx-test:latest[0m
+2025-05-10T12:23:03.1160295Z [36;1mEOF[0m
+2025-05-10T12:23:03.1179384Z shell: /usr/bin/bash -e {0}
+2025-05-10T12:23:03.1179920Z env:
+2025-05-10T12:23:03.1216279Z   SSH_PRIVATE_KEY: ***
+2025-05-10T12:23:03.1216930Z   VM_HOST: ***
+2025-05-10T12:23:03.1217458Z   VM_USER: ***
+2025-05-10T12:23:03.1217880Z ##[endgroup]
+2025-05-10T12:23:05.9087975Z Pseudo-terminal will not be allocated because stdin is not a terminal.
+2025-05-10T12:23:06.4003502Z Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-208-generic x86_64)
+2025-05-10T12:23:06.4004364Z 
+2025-05-10T12:23:06.4004843Z  * Documentation:  https://help.ubuntu.com
+2025-05-10T12:23:06.4006044Z  * Management:     https://landscape.canonical.com
+2025-05-10T12:23:06.4006830Z  * Support:        https://ubuntu.com/advantage
+2025-05-10T12:23:06.4007298Z 
+2025-05-10T12:23:06.4007674Z   System information as of Sat 10 May 2025 12:23:10 PM UTC
+2025-05-10T12:23:06.4008187Z 
+2025-05-10T12:23:06.4008422Z   System load:                      0.13
+2025-05-10T12:23:06.4009492Z   Usage of /:                       61.6% of 9.75GB
+2025-05-10T12:23:06.4010897Z   Memory usage:                     21%
+2025-05-10T12:23:06.4011725Z   Swap usage:                       0%
+2025-05-10T12:23:06.4012332Z   Processes:                        147
+2025-05-10T12:23:06.4013202Z   Users logged in:                  1
+2025-05-10T12:23:06.4014105Z   IPv4 address for br-ac91d85bb36b: 172.18.0.1
+2025-05-10T12:23:06.4015101Z   IPv4 address for docker0:         172.17.0.1
+2025-05-10T12:23:06.4016121Z   IPv4 address for enp0s3:          ***
+2025-05-10T12:23:06.4017026Z 
+2025-05-10T12:23:06.4017955Z  * Ubuntu 20.04 LTS Focal Fossa will reach its end of standard support on 31 May
+2025-05-10T12:23:06.4018804Z  
+2025-05-10T12:23:06.4019247Z    For more details see:
+2025-05-10T12:23:06.4019811Z    https://ubuntu.com/20-04
+2025-05-10T12:23:06.4020152Z 
+2025-05-10T12:23:06.4021896Z  * Introducing Expanded Security Maintenance for Applications.
+2025-05-10T12:23:06.4024056Z    Receive updates to over 25,000 software packages with your
+2025-05-10T12:23:06.4024940Z    Ubuntu Pro subscription. Free for personal use.
+2025-05-10T12:23:06.4025414Z 
+2025-05-10T12:23:06.4026070Z      https://ubuntu.com/pro
+2025-05-10T12:23:06.4026813Z 
+2025-05-10T12:23:06.4027517Z Expanded Security Maintenance for Applications is not enabled.
+2025-05-10T12:23:06.4028142Z 
+2025-05-10T12:23:06.4028417Z 0 updates can be applied immediately.
+2025-05-10T12:23:06.4028803Z 
+2025-05-10T12:23:06.4029195Z Enable ESM Apps to receive additional future security updates.
+2025-05-10T12:23:06.4030066Z See https://ubuntu.com/esm or run: sudo pro status
+2025-05-10T12:23:06.4030545Z 
+2025-05-10T12:23:06.4030552Z 
+2025-05-10T12:23:06.4030875Z The list of available updates is more than a week old.
+2025-05-10T12:23:06.4031645Z To check for new updates run: sudo apt update
+2025-05-10T12:23:06.4032319Z New release '22.04.5 LTS' available.
+2025-05-10T12:23:06.4032949Z Run 'do-release-upgrade' to upgrade to it.
+2025-05-10T12:23:06.4033372Z 
+2025-05-10T12:23:06.4033379Z 
+2025-05-10T12:23:06.4033605Z *** System restart required ***
+2025-05-10T12:23:08.3237525Z Loaded image: nginx-test:latest
+2025-05-10T12:23:08.3585374Z Error response from daemon: No such container: nginx-test
+2025-05-10T12:23:08.3706944Z Error response from daemon: No such container: nginx-test
+2025-05-10T12:23:08.4457194Z d65329358cab6db2e0f6ba927283762ba765cd5e04650e74a301cd49801c6b04

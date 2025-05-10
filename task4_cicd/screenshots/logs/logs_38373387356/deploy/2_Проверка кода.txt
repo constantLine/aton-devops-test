@@ -1,0 +1,64 @@
+﻿2025-05-10T12:20:00.7740495Z ##[group]Run actions/checkout@v3
+2025-05-10T12:20:00.7741428Z with:
+2025-05-10T12:20:00.7741895Z   repository: constantLine/aton-devops-test
+2025-05-10T12:20:00.7744756Z   token: ***
+2025-05-10T12:20:00.7745256Z   ssh-strict: true
+2025-05-10T12:20:00.7745701Z   persist-credentials: true
+2025-05-10T12:20:00.7746195Z   clean: true
+2025-05-10T12:20:00.7746629Z   sparse-checkout-cone-mode: true
+2025-05-10T12:20:00.7747153Z   fetch-depth: 1
+2025-05-10T12:20:00.7747576Z   fetch-tags: false
+2025-05-10T12:20:00.7748001Z   lfs: false
+2025-05-10T12:20:00.7748431Z   submodules: false
+2025-05-10T12:20:00.7748886Z   set-safe-directory: true
+2025-05-10T12:20:00.7749683Z ##[endgroup]
+2025-05-10T12:20:00.8969181Z Syncing repository: constantLine/aton-devops-test
+2025-05-10T12:20:00.8973723Z ##[group]Getting Git version info
+2025-05-10T12:20:00.8975607Z Working directory is '/home/***/actions-runner/_work/aton-devops-test/aton-devops-test'
+2025-05-10T12:20:00.8977072Z [command]/usr/bin/git version
+2025-05-10T12:20:00.9023235Z git version 2.43.0
+2025-05-10T12:20:00.9055173Z ##[endgroup]
+2025-05-10T12:20:00.9064596Z Copying '/home/***/.gitconfig' to '/home/***/actions-runner/_work/_temp/4320cbd5-82e7-4df9-a37e-0dea43513065/.gitconfig'
+2025-05-10T12:20:00.9085403Z Temporarily overriding HOME='/home/***/actions-runner/_work/_temp/4320cbd5-82e7-4df9-a37e-0dea43513065' before making global git config changes
+2025-05-10T12:20:00.9094461Z Adding repository directory to the temporary git global config as a safe directory
+2025-05-10T12:20:00.9097986Z [command]/usr/bin/git config --global --add safe.directory /home/***/actions-runner/_work/aton-devops-test/aton-devops-test
+2025-05-10T12:20:00.9146264Z [command]/usr/bin/git config --local --get remote.origin.url
+2025-05-10T12:20:00.9184034Z https://github.com/constantLine/aton-devops-test
+2025-05-10T12:20:00.9205592Z ##[group]Removing previously created refs, to avoid conflicts
+2025-05-10T12:20:00.9208637Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2025-05-10T12:20:00.9239735Z refs/heads/main
+2025-05-10T12:20:00.9253362Z [command]/usr/bin/git checkout --detach
+2025-05-10T12:20:00.9299526Z HEAD сейчас на 3a6c338 Change deploy test in ci-cd.yml
+2025-05-10T12:20:00.9359608Z [command]/usr/bin/git branch --delete --force main
+2025-05-10T12:20:00.9403963Z Ветка main удалена (была 3a6c338).
+2025-05-10T12:20:00.9458211Z ##[endgroup]
+2025-05-10T12:20:00.9461365Z [command]/usr/bin/git submodule status
+2025-05-10T12:20:00.9885084Z ##[group]Cleaning the repository
+2025-05-10T12:20:00.9886463Z [command]/usr/bin/git clean -ffdx
+2025-05-10T12:20:01.0019948Z Удаление nginx-test.tar.gz
+2025-05-10T12:20:01.0036540Z [command]/usr/bin/git reset --hard HEAD
+2025-05-10T12:20:01.0101389Z Указатель HEAD сейчас на коммите 3a6c338 Change deploy test in ci-cd.yml
+2025-05-10T12:20:01.0104216Z ##[endgroup]
+2025-05-10T12:20:01.0105053Z ##[group]Disabling automatic garbage collection
+2025-05-10T12:20:01.0106396Z [command]/usr/bin/git config --local gc.auto 0
+2025-05-10T12:20:01.0150184Z ##[endgroup]
+2025-05-10T12:20:01.0151057Z ##[group]Setting up auth
+2025-05-10T12:20:01.0155998Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-05-10T12:20:01.0209766Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-05-10T12:20:01.0653931Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-05-10T12:20:01.0699582Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-05-10T12:20:01.1260117Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-05-10T12:20:01.1388339Z ##[endgroup]
+2025-05-10T12:20:01.1389500Z ##[group]Fetching the repository
+2025-05-10T12:20:01.1391691Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +3a6c33873f4ff7786630c8cbb89959f6254579ff:refs/remotes/origin/main
+2025-05-10T12:20:01.7259886Z remote: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)        
+2025-05-10T12:20:01.7393261Z ##[endgroup]
+2025-05-10T12:20:01.7414472Z ##[group]Determining the checkout info
+2025-05-10T12:20:01.7417353Z ##[endgroup]
+2025-05-10T12:20:01.7419538Z ##[group]Checking out the ref
+2025-05-10T12:20:01.7422443Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-05-10T12:20:01.7496750Z Переключились на новую ветку «main»
+2025-05-10T12:20:01.7498806Z branch 'main' set up to track 'origin/main'.
+2025-05-10T12:20:01.7511757Z ##[endgroup]
+2025-05-10T12:20:01.7576744Z [command]/usr/bin/git log -1 --format='%H'
+2025-05-10T12:20:01.7624112Z '3a6c33873f4ff7786630c8cbb89959f6254579ff'

@@ -1,0 +1,16 @@
+﻿2025-05-10T12:18:48.5163537Z Current runner version: '2.323.0'
+2025-05-10T12:18:48.5171108Z Runner name: 'YndxUbuntu'
+2025-05-10T12:18:48.5172230Z Machine name: 'YndxUbuntu'
+2025-05-10T12:18:48.5175129Z ##[group]GITHUB_TOKEN Permissions
+2025-05-10T12:18:48.5177317Z Contents: read
+2025-05-10T12:18:48.5177841Z Metadata: read
+2025-05-10T12:18:48.5179604Z Packages: read
+2025-05-10T12:18:48.5186208Z ##[endgroup]
+2025-05-10T12:18:48.5190136Z Secret source: Actions
+2025-05-10T12:18:48.5191124Z Prepare workflow directory
+2025-05-10T12:18:48.6231268Z Prepare all required actions
+2025-05-10T12:18:48.6277725Z Getting action download info
+2025-05-10T12:18:49.4927449Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-05-10T12:18:50.7076891Z Download action repository 'docker/setup-buildx-action@v2' (SHA:885d1462b80bc1c1c7f0b00334ad271f09369c55)
+2025-05-10T12:18:52.3073878Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-05-10T12:18:54.7561874Z Complete job name: build

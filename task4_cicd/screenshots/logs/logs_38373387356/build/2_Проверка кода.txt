@@ -1,0 +1,93 @@
+﻿2025-05-10T12:18:54.8691232Z ##[group]Run actions/checkout@v3
+2025-05-10T12:18:54.8691943Z with:
+2025-05-10T12:18:54.8692228Z   repository: constantLine/aton-devops-test
+2025-05-10T12:18:54.8692872Z   token: ***
+2025-05-10T12:18:54.8693098Z   ssh-strict: true
+2025-05-10T12:18:54.8693360Z   persist-credentials: true
+2025-05-10T12:18:54.8693654Z   clean: true
+2025-05-10T12:18:54.8693903Z   sparse-checkout-cone-mode: true
+2025-05-10T12:18:54.8694238Z   fetch-depth: 1
+2025-05-10T12:18:54.8694475Z   fetch-tags: false
+2025-05-10T12:18:54.8694711Z   lfs: false
+2025-05-10T12:18:54.8694947Z   submodules: false
+2025-05-10T12:18:54.8695206Z   set-safe-directory: true
+2025-05-10T12:18:54.8695798Z ##[endgroup]
+2025-05-10T12:18:54.9933708Z Syncing repository: constantLine/aton-devops-test
+2025-05-10T12:18:54.9935689Z ##[group]Getting Git version info
+2025-05-10T12:18:54.9936596Z Working directory is '/home/constabz/actions-runner/_work/aton-devops-test/aton-devops-test'
+2025-05-10T12:18:54.9938097Z [command]/usr/bin/git version
+2025-05-10T12:18:54.9950481Z git version 2.43.0
+2025-05-10T12:18:54.9987195Z ##[endgroup]
+2025-05-10T12:18:55.0005449Z Copying '/home/constabz/.gitconfig' to '/home/constabz/actions-runner/_work/_temp/c27331f5-9c5f-44b2-bb2c-451ada4e4f6f/.gitconfig'
+2025-05-10T12:18:55.0027684Z Temporarily overriding HOME='/home/constabz/actions-runner/_work/_temp/c27331f5-9c5f-44b2-bb2c-451ada4e4f6f' before making global git config changes
+2025-05-10T12:18:55.0030358Z Adding repository directory to the temporary git global config as a safe directory
+2025-05-10T12:18:55.0037010Z [command]/usr/bin/git config --global --add safe.directory /home/constabz/actions-runner/_work/aton-devops-test/aton-devops-test
+2025-05-10T12:18:55.0093447Z [command]/usr/bin/git config --local --get remote.origin.url
+2025-05-10T12:18:55.0133843Z https://github.com/constantLine/aton-devops-test
+2025-05-10T12:18:55.0172565Z ##[group]Removing previously created refs, to avoid conflicts
+2025-05-10T12:18:55.0176220Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2025-05-10T12:18:55.0225192Z refs/heads/main
+2025-05-10T12:18:55.0237412Z [command]/usr/bin/git checkout --detach
+2025-05-10T12:18:55.0364148Z HEAD сейчас на 4a428e1 Change runner to self-hosted
+2025-05-10T12:18:55.0427652Z [command]/usr/bin/git branch --delete --force main
+2025-05-10T12:18:55.0482704Z Ветка main удалена (была 4a428e1).
+2025-05-10T12:18:55.0549976Z ##[endgroup]
+2025-05-10T12:18:55.0551992Z [command]/usr/bin/git submodule status
+2025-05-10T12:18:55.1012845Z ##[group]Cleaning the repository
+2025-05-10T12:18:55.1016467Z [command]/usr/bin/git clean -ffdx
+2025-05-10T12:18:55.1312510Z Удаление nginx-test.tar.gz
+2025-05-10T12:18:55.1313120Z Удаление private_key
+2025-05-10T12:18:55.1313544Z Удаление task4_cicd/screenshots/curl_output.txt
+2025-05-10T12:18:55.1314044Z Удаление task4_cicd/screenshots/http_code.txt
+2025-05-10T12:18:55.1314543Z Удаление task4_cicd/screenshots/nginx_logs.txt
+2025-05-10T12:18:55.1324498Z [command]/usr/bin/git reset --hard HEAD
+2025-05-10T12:18:55.1385978Z Указатель HEAD сейчас на коммите 4a428e1 Change runner to self-hosted
+2025-05-10T12:18:55.1394224Z ##[endgroup]
+2025-05-10T12:18:55.1396341Z ##[group]Disabling automatic garbage collection
+2025-05-10T12:18:55.1399730Z [command]/usr/bin/git config --local gc.auto 0
+2025-05-10T12:18:55.1445376Z ##[endgroup]
+2025-05-10T12:18:55.1446217Z ##[group]Setting up auth
+2025-05-10T12:18:55.1459338Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-05-10T12:18:55.1526470Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-05-10T12:18:55.2069861Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-05-10T12:18:55.2110703Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-05-10T12:18:55.2582622Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-05-10T12:18:55.2659207Z ##[endgroup]
+2025-05-10T12:18:55.2660492Z ##[group]Fetching the repository
+2025-05-10T12:18:55.2668237Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +3a6c33873f4ff7786630c8cbb89959f6254579ff:refs/remotes/origin/main
+2025-05-10T12:18:55.8646159Z remote: Enumerating objects: 9, done.        
+2025-05-10T12:18:55.8649053Z remote: Counting objects:  11% (1/9)        
+2025-05-10T12:18:55.8656170Z remote: Counting objects:  22% (2/9)        
+2025-05-10T12:18:55.8657122Z remote: Counting objects:  33% (3/9)        
+2025-05-10T12:18:55.8657931Z remote: Counting objects:  44% (4/9)        
+2025-05-10T12:18:55.8658738Z remote: Counting objects:  55% (5/9)        
+2025-05-10T12:18:55.8659557Z remote: Counting objects:  66% (6/9)        
+2025-05-10T12:18:55.8660437Z remote: Counting objects:  77% (7/9)        
+2025-05-10T12:18:55.8661235Z remote: Counting objects:  88% (8/9)        
+2025-05-10T12:18:55.8662040Z remote: Counting objects: 100% (9/9)        
+2025-05-10T12:18:55.8662914Z remote: Counting objects: 100% (9/9), done.        
+2025-05-10T12:18:55.8664156Z remote: Compressing objects:  33% (1/3)        
+2025-05-10T12:18:55.8666086Z remote: Compressing objects:  66% (2/3)        
+2025-05-10T12:18:55.8668504Z remote: Compressing objects: 100% (3/3)        
+2025-05-10T12:18:55.8670785Z remote: Compressing objects: 100% (3/3), done.        
+2025-05-10T12:18:55.8678520Z remote: Total 5 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)        
+2025-05-10T12:18:55.8840891Z Из https://github.com/constantLine/aton-devops-test
+2025-05-10T12:18:55.8842228Z  + 4a428e1...3a6c338 3a6c33873f4ff7786630c8cbb89959f6254579ff -> origin/main  (принудительное обновление)
+2025-05-10T12:18:55.8900615Z ##[endgroup]
+2025-05-10T12:18:55.8901326Z ##[group]Determining the checkout info
+2025-05-10T12:18:55.8901965Z ##[endgroup]
+2025-05-10T12:18:55.8902445Z ##[group]Checking out the ref
+2025-05-10T12:18:55.8903231Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-05-10T12:18:55.8985616Z Предупреждение: позади остался 1 коммит, не связанный ни с одной из веток:
+2025-05-10T12:18:55.8988672Z 
+2025-05-10T12:18:55.8989150Z   4a428e1 Change runner to self-hosted
+2025-05-10T12:18:55.8989664Z 
+2025-05-10T12:18:55.8990099Z Если хотите сохранить его в новую ветку, то сейчас самое время для команды:
+2025-05-10T12:18:55.8996007Z 
+2025-05-10T12:18:55.8996324Z  git branch <имя-новой-ветки> 4a428e1
+2025-05-10T12:18:55.8996607Z 
+2025-05-10T12:18:55.8996776Z Переключились на новую ветку «main»
+2025-05-10T12:18:55.8997239Z branch 'main' set up to track 'origin/main'.
+2025-05-10T12:18:55.9006425Z ##[endgroup]
+2025-05-10T12:18:55.9068830Z [command]/usr/bin/git log -1 --format='%H'
+2025-05-10T12:18:55.9106862Z '3a6c33873f4ff7786630c8cbb89959f6254579ff'

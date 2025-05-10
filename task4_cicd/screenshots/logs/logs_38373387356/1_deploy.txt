@@ -1,0 +1,334 @@
+﻿2025-05-10T12:19:54.3654220Z Current runner version: '2.323.0'
+2025-05-10T12:19:54.3676017Z Runner name: 'YndxUbuntu'
+2025-05-10T12:19:54.3679086Z Machine name: 'YndxUbuntu'
+2025-05-10T12:19:54.3693328Z ##[group]GITHUB_TOKEN Permissions
+2025-05-10T12:19:54.3702215Z Contents: read
+2025-05-10T12:19:54.3703501Z Metadata: read
+2025-05-10T12:19:54.3704724Z Packages: read
+2025-05-10T12:19:54.3705788Z ##[endgroup]
+2025-05-10T12:19:54.3709494Z Secret source: Actions
+2025-05-10T12:19:54.3711251Z Prepare workflow directory
+2025-05-10T12:19:54.4387693Z Prepare all required actions
+2025-05-10T12:19:54.4433982Z Getting action download info
+2025-05-10T12:19:55.3063680Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-05-10T12:19:56.6509585Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+2025-05-10T12:19:58.1685740Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-05-10T12:20:00.6623900Z Complete job name: deploy
+2025-05-10T12:20:00.7740557Z ##[group]Run actions/checkout@v3
+2025-05-10T12:20:00.7741439Z with:
+2025-05-10T12:20:00.7741899Z   repository: constantLine/aton-devops-test
+2025-05-10T12:20:00.7744780Z   token: ***
+2025-05-10T12:20:00.7745260Z   ssh-strict: true
+2025-05-10T12:20:00.7745705Z   persist-credentials: true
+2025-05-10T12:20:00.7746199Z   clean: true
+2025-05-10T12:20:00.7746633Z   sparse-checkout-cone-mode: true
+2025-05-10T12:20:00.7747156Z   fetch-depth: 1
+2025-05-10T12:20:00.7747594Z   fetch-tags: false
+2025-05-10T12:20:00.7748015Z   lfs: false
+2025-05-10T12:20:00.7748434Z   submodules: false
+2025-05-10T12:20:00.7748889Z   set-safe-directory: true
+2025-05-10T12:20:00.7749693Z ##[endgroup]
+2025-05-10T12:20:00.8969318Z Syncing repository: constantLine/aton-devops-test
+2025-05-10T12:20:00.8973750Z ##[group]Getting Git version info
+2025-05-10T12:20:00.8975622Z Working directory is '/home/***/actions-runner/_work/aton-devops-test/aton-devops-test'
+2025-05-10T12:20:00.8977137Z [command]/usr/bin/git version
+2025-05-10T12:20:00.9023325Z git version 2.43.0
+2025-05-10T12:20:00.9055220Z ##[endgroup]
+2025-05-10T12:20:00.9064629Z Copying '/home/***/.gitconfig' to '/home/***/actions-runner/_work/_temp/4320cbd5-82e7-4df9-a37e-0dea43513065/.gitconfig'
+2025-05-10T12:20:00.9085466Z Temporarily overriding HOME='/home/***/actions-runner/_work/_temp/4320cbd5-82e7-4df9-a37e-0dea43513065' before making global git config changes
+2025-05-10T12:20:00.9094518Z Adding repository directory to the temporary git global config as a safe directory
+2025-05-10T12:20:00.9098030Z [command]/usr/bin/git config --global --add safe.directory /home/***/actions-runner/_work/aton-devops-test/aton-devops-test
+2025-05-10T12:20:00.9146315Z [command]/usr/bin/git config --local --get remote.origin.url
+2025-05-10T12:20:00.9184123Z https://github.com/constantLine/aton-devops-test
+2025-05-10T12:20:00.9205646Z ##[group]Removing previously created refs, to avoid conflicts
+2025-05-10T12:20:00.9208683Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2025-05-10T12:20:00.9239785Z refs/heads/main
+2025-05-10T12:20:00.9253408Z [command]/usr/bin/git checkout --detach
+2025-05-10T12:20:00.9299584Z HEAD сейчас на 3a6c338 Change deploy test in ci-cd.yml
+2025-05-10T12:20:00.9359660Z [command]/usr/bin/git branch --delete --force main
+2025-05-10T12:20:00.9404023Z Ветка main удалена (была 3a6c338).
+2025-05-10T12:20:00.9458262Z ##[endgroup]
+2025-05-10T12:20:00.9461399Z [command]/usr/bin/git submodule status
+2025-05-10T12:20:00.9885137Z ##[group]Cleaning the repository
+2025-05-10T12:20:00.9886480Z [command]/usr/bin/git clean -ffdx
+2025-05-10T12:20:01.0021856Z Удаление nginx-test.tar.gz
+2025-05-10T12:20:01.0036586Z [command]/usr/bin/git reset --hard HEAD
+2025-05-10T12:20:01.0101458Z Указатель HEAD сейчас на коммите 3a6c338 Change deploy test in ci-cd.yml
+2025-05-10T12:20:01.0104230Z ##[endgroup]
+2025-05-10T12:20:01.0105059Z ##[group]Disabling automatic garbage collection
+2025-05-10T12:20:01.0106410Z [command]/usr/bin/git config --local gc.auto 0
+2025-05-10T12:20:01.0150262Z ##[endgroup]
+2025-05-10T12:20:01.0151063Z ##[group]Setting up auth
+2025-05-10T12:20:01.0156021Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-05-10T12:20:01.0209830Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-05-10T12:20:01.0653994Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-05-10T12:20:01.0699787Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-05-10T12:20:01.1260191Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-05-10T12:20:01.1388479Z ##[endgroup]
+2025-05-10T12:20:01.1389842Z ##[group]Fetching the repository
+2025-05-10T12:20:01.1391696Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +3a6c33873f4ff7786630c8cbb89959f6254579ff:refs/remotes/origin/main
+2025-05-10T12:20:01.7259978Z remote: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)        
+2025-05-10T12:20:01.7393322Z ##[endgroup]
+2025-05-10T12:20:01.7414532Z ##[group]Determining the checkout info
+2025-05-10T12:20:01.7417396Z ##[endgroup]
+2025-05-10T12:20:01.7419569Z ##[group]Checking out the ref
+2025-05-10T12:20:01.7422481Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-05-10T12:20:01.7496844Z Переключились на новую ветку «main»
+2025-05-10T12:20:01.7498845Z branch 'main' set up to track 'origin/main'.
+2025-05-10T12:20:01.7511822Z ##[endgroup]
+2025-05-10T12:20:01.7576830Z [command]/usr/bin/git log -1 --format='%H'
+2025-05-10T12:20:01.7624193Z '3a6c33873f4ff7786630c8cbb89959f6254579ff'
+2025-05-10T12:20:01.7891056Z ##[group]Run actions/download-artifact@v4
+2025-05-10T12:20:01.7891688Z with:
+2025-05-10T12:20:01.7892205Z   name: docker-image
+2025-05-10T12:20:01.7892663Z   path: .
+2025-05-10T12:20:01.7893397Z   merge-multiple: false
+2025-05-10T12:20:01.7893935Z   repository: constantLine/aton-devops-test
+2025-05-10T12:20:01.7894540Z   run-id: 14945264713
+2025-05-10T12:20:01.7894961Z ##[endgroup]
+2025-05-10T12:20:02.1140610Z Downloading single artifact
+2025-05-10T12:20:02.6714143Z Preparing to download the following artifacts:
+2025-05-10T12:20:02.6717295Z - docker-image (ID: 3099006273, Size: 70515944, Expected Digest: sha256:0f7bee7f39c54c67cce07c3ff0df1e970f937b5bed92d1fe7b9f718e557bf039)
+2025-05-10T12:20:03.0093215Z Redirecting to blob download url: https://productionresultssa7.blob.core.windows.net/actions-results/fb77b4a8-77e5-49c9-ad15-a51f2e0c31c1/workflow-job-run-c82631c4-bf33-5651-9594-c955a3593559/artifacts/d00d9db8955031cc609b4ecce7ceac843ed503a5f4fa84e72344ea36548494c6.zip
+2025-05-10T12:20:03.0096523Z Starting download of artifact to: /home/***/actions-runner/_work/aton-devops-test/aton-devops-test
+2025-05-10T12:20:03.6782753Z (node:47074) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2025-05-10T12:20:03.6785846Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-05-10T12:23:03.0935555Z SHA256 digest of downloaded artifact is 0f7bee7f39c54c67cce07c3ff0df1e970f937b5bed92d1fe7b9f718e557bf039
+2025-05-10T12:23:03.0954014Z Artifact download completed successfully.
+2025-05-10T12:23:03.0954927Z Total of 1 artifact(s) downloaded
+2025-05-10T12:23:03.0955706Z Download artifact has finished successfully
+2025-05-10T12:23:03.1151838Z ##[group]Run echo "$SSH_PRIVATE_KEY" > private_key
+2025-05-10T12:23:03.1152893Z [36;1mecho "$SSH_PRIVATE_KEY" > private_key[0m
+2025-05-10T12:23:03.1153520Z [36;1mchmod 600 private_key[0m
+2025-05-10T12:23:03.1154478Z [36;1mscp -i private_key nginx-test.tar.gz $VM_USER@$VM_HOST:/home/$VM_USER/[0m
+2025-05-10T12:23:03.1155923Z [36;1mssh -i private_key $VM_USER@$VM_HOST << 'EOF'[0m
+2025-05-10T12:23:03.1156667Z [36;1m  docker load < nginx-test.tar.gz[0m
+2025-05-10T12:23:03.1157273Z [36;1m  rm nginx-test.tar.gz[0m
+2025-05-10T12:23:03.1157837Z [36;1m  docker stop nginx-test || true[0m
+2025-05-10T12:23:03.1158589Z [36;1m  docker rm nginx-test || true[0m
+2025-05-10T12:23:03.1159407Z [36;1m  docker run -d --name nginx-test -p 80:80 -p 443:443 nginx-test:latest[0m
+2025-05-10T12:23:03.1160304Z [36;1mEOF[0m
+2025-05-10T12:23:03.1179402Z shell: /usr/bin/bash -e {0}
+2025-05-10T12:23:03.1179925Z env:
+2025-05-10T12:23:03.1216299Z   SSH_PRIVATE_KEY: ***
+2025-05-10T12:23:03.1217009Z   VM_HOST: ***
+2025-05-10T12:23:03.1217461Z   VM_USER: ***
+2025-05-10T12:23:03.1217884Z ##[endgroup]
+2025-05-10T12:23:05.9088080Z Pseudo-terminal will not be allocated because stdin is not a terminal.
+2025-05-10T12:23:06.4003535Z Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-208-generic x86_64)
+2025-05-10T12:23:06.4004373Z 
+2025-05-10T12:23:06.4004852Z  * Documentation:  https://help.ubuntu.com
+2025-05-10T12:23:06.4006051Z  * Management:     https://landscape.canonical.com
+2025-05-10T12:23:06.4006833Z  * Support:        https://ubuntu.com/advantage
+2025-05-10T12:23:06.4007301Z 
+2025-05-10T12:23:06.4007677Z   System information as of Sat 10 May 2025 12:23:10 PM UTC
+2025-05-10T12:23:06.4008190Z 
+2025-05-10T12:23:06.4008425Z   System load:                      0.13
+2025-05-10T12:23:06.4009503Z   Usage of /:                       61.6% of 9.75GB
+2025-05-10T12:23:06.4010906Z   Memory usage:                     21%
+2025-05-10T12:23:06.4011733Z   Swap usage:                       0%
+2025-05-10T12:23:06.4012357Z   Processes:                        147
+2025-05-10T12:23:06.4013211Z   Users logged in:                  1
+2025-05-10T12:23:06.4014115Z   IPv4 address for br-ac91d85bb36b: 172.18.0.1
+2025-05-10T12:23:06.4015105Z   IPv4 address for docker0:         172.17.0.1
+2025-05-10T12:23:06.4016129Z   IPv4 address for enp0s3:          ***
+2025-05-10T12:23:06.4017053Z 
+2025-05-10T12:23:06.4017959Z  * Ubuntu 20.04 LTS Focal Fossa will reach its end of standard support on 31 May
+2025-05-10T12:23:06.4018808Z  
+2025-05-10T12:23:06.4019251Z    For more details see:
+2025-05-10T12:23:06.4019814Z    https://ubuntu.com/20-04
+2025-05-10T12:23:06.4020155Z 
+2025-05-10T12:23:06.4022411Z  * Introducing Expanded Security Maintenance for Applications.
+2025-05-10T12:23:06.4024064Z    Receive updates to over 25,000 software packages with your
+2025-05-10T12:23:06.4024943Z    Ubuntu Pro subscription. Free for personal use.
+2025-05-10T12:23:06.4025417Z 
+2025-05-10T12:23:06.4026087Z      https://ubuntu.com/pro
+2025-05-10T12:23:06.4026822Z 
+2025-05-10T12:23:06.4027547Z Expanded Security Maintenance for Applications is not enabled.
+2025-05-10T12:23:06.4028146Z 
+2025-05-10T12:23:06.4028420Z 0 updates can be applied immediately.
+2025-05-10T12:23:06.4028806Z 
+2025-05-10T12:23:06.4029198Z Enable ESM Apps to receive additional future security updates.
+2025-05-10T12:23:06.4030070Z See https://ubuntu.com/esm or run: sudo pro status
+2025-05-10T12:23:06.4030547Z 
+2025-05-10T12:23:06.4030554Z 
+2025-05-10T12:23:06.4030878Z The list of available updates is more than a week old.
+2025-05-10T12:23:06.4031648Z To check for new updates run: sudo apt update
+2025-05-10T12:23:06.4032322Z New release '22.04.5 LTS' available.
+2025-05-10T12:23:06.4032953Z Run 'do-release-upgrade' to upgrade to it.
+2025-05-10T12:23:06.4033375Z 
+2025-05-10T12:23:06.4033381Z 
+2025-05-10T12:23:06.4033608Z *** System restart required ***
+2025-05-10T12:23:08.3237568Z Loaded image: nginx-test:latest
+2025-05-10T12:23:08.3585415Z Error response from daemon: No such container: nginx-test
+2025-05-10T12:23:08.3707417Z Error response from daemon: No such container: nginx-test
+2025-05-10T12:23:08.4457233Z d65329358cab6db2e0f6ba927283762ba765cd5e04650e74a301cd49801c6b04
+2025-05-10T12:23:08.8055277Z ##[group]Run ssh -i private_key $VM_USER@$VM_HOST << 'EOF'
+2025-05-10T12:23:08.8056709Z [36;1mssh -i private_key $VM_USER@$VM_HOST << 'EOF'[0m
+2025-05-10T12:23:08.8057680Z [36;1m  curl -vk https://localhost:443 > curl_output.txt[0m
+2025-05-10T12:23:08.8058441Z [36;1m  docker logs nginx-test > nginx_logs.txt[0m
+2025-05-10T12:23:08.8059087Z [36;1m  cat curl_output.txt[0m
+2025-05-10T12:23:08.8059642Z [36;1m  mkdir -p task4_cicd/screenshots[0m
+2025-05-10T12:23:08.8060319Z [36;1m  mv curl_output.txt task4_cicd/screenshots/[0m
+2025-05-10T12:23:08.8061032Z [36;1m  mv nginx_logs.txt task4_cicd/screenshots/[0m
+2025-05-10T12:23:08.8061664Z [36;1mEOF[0m
+2025-05-10T12:23:08.8062725Z [36;1mscp -i private_key $VM_USER@$VM_HOST:/home/$VM_USER/task4_cicd/screenshots/* task4_cicd/screenshots/[0m
+2025-05-10T12:23:08.8082252Z shell: /usr/bin/bash -e {0}
+2025-05-10T12:23:08.8082750Z env:
+2025-05-10T12:23:08.8130279Z   SSH_PRIVATE_KEY: ***
+2025-05-10T12:23:08.8130864Z   VM_HOST: ***
+2025-05-10T12:23:08.8131562Z   VM_USER: ***
+2025-05-10T12:23:08.8133504Z ##[endgroup]
+2025-05-10T12:23:08.8293171Z Pseudo-terminal will not be allocated because stdin is not a terminal.
+2025-05-10T12:23:09.3779347Z Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-208-generic x86_64)
+2025-05-10T12:23:09.3780591Z 
+2025-05-10T12:23:09.3780987Z  * Documentation:  https://help.ubuntu.com
+2025-05-10T12:23:09.3782617Z  * Management:     https://landscape.canonical.com
+2025-05-10T12:23:09.3783398Z  * Support:        https://ubuntu.com/advantage
+2025-05-10T12:23:09.3783937Z 
+2025-05-10T12:23:09.3784859Z   System information as of Sat 10 May 2025 12:23:13 PM UTC
+2025-05-10T12:23:09.3785412Z 
+2025-05-10T12:23:09.3786201Z   System load:                      0.13
+2025-05-10T12:23:09.3787607Z   Usage of /:                       61.0% of 9.75GB
+2025-05-10T12:23:09.3788285Z   Memory usage:                     22%
+2025-05-10T12:23:09.3788991Z   Swap usage:                       0%
+2025-05-10T12:23:09.3789639Z   Processes:                        155
+2025-05-10T12:23:09.3790247Z   Users logged in:                  1
+2025-05-10T12:23:09.3791296Z   IPv4 address for br-ac91d85bb36b: 172.18.0.1
+2025-05-10T12:23:09.3792103Z   IPv4 address for docker0:         172.17.0.1
+2025-05-10T12:23:09.3792858Z   IPv4 address for enp0s3:          ***
+2025-05-10T12:23:09.3794087Z 
+2025-05-10T12:23:09.3794644Z  * Ubuntu 20.04 LTS Focal Fossa will reach its end of standard support on 31 May
+2025-05-10T12:23:09.3795453Z  
+2025-05-10T12:23:09.3810120Z    For more details see:
+2025-05-10T12:23:09.3813330Z    https://ubuntu.com/20-04
+2025-05-10T12:23:09.3813688Z 
+2025-05-10T12:23:09.3814134Z  * Introducing Expanded Security Maintenance for Applications.
+2025-05-10T12:23:09.3815153Z    Receive updates to over 25,000 software packages with your
+2025-05-10T12:23:09.3816061Z    Ubuntu Pro subscription. Free for personal use.
+2025-05-10T12:23:09.3816561Z 
+2025-05-10T12:23:09.3816818Z      https://ubuntu.com/pro
+2025-05-10T12:23:09.3817165Z 
+2025-05-10T12:23:09.3817637Z Expanded Security Maintenance for Applications is not enabled.
+2025-05-10T12:23:09.3818257Z 
+2025-05-10T12:23:09.3818533Z 0 updates can be applied immediately.
+2025-05-10T12:23:09.3819169Z 
+2025-05-10T12:23:09.3819593Z Enable ESM Apps to receive additional future security updates.
+2025-05-10T12:23:09.3823070Z See https://ubuntu.com/esm or run: sudo pro status
+2025-05-10T12:23:09.3824006Z 
+2025-05-10T12:23:09.3824012Z 
+2025-05-10T12:23:09.3824420Z The list of available updates is more than a week old.
+2025-05-10T12:23:09.3825229Z To check for new updates run: sudo apt update
+2025-05-10T12:23:09.3825942Z New release '22.04.5 LTS' available.
+2025-05-10T12:23:09.3826599Z Run 'do-release-upgrade' to upgrade to it.
+2025-05-10T12:23:09.3827041Z 
+2025-05-10T12:23:09.3827046Z 
+2025-05-10T12:23:09.3827294Z *** System restart required ***
+2025-05-10T12:23:09.4112318Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2025-05-10T12:23:09.4113904Z                                  Dload  Upload   Total   Spent    Left  Speed
+2025-05-10T12:23:09.4114490Z 
+2025-05-10T12:23:09.4138387Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 127.0.0.1:443...
+2025-05-10T12:23:09.4139193Z * TCP_NODELAY set
+2025-05-10T12:23:09.4233600Z * Connected to localhost (127.0.0.1) port 443 (#0)
+2025-05-10T12:23:09.4236757Z * ALPN, offering h2
+2025-05-10T12:23:09.4244604Z * ALPN, offering http/1.1
+2025-05-10T12:23:09.4246383Z * successfully set certificate verify locations:
+2025-05-10T12:23:09.4247949Z *   CAfile: /etc/ssl/certs/ca-certificates.crt
+2025-05-10T12:23:09.4249953Z   CApath: /etc/ssl/certs
+2025-05-10T12:23:09.4250625Z } [5 bytes data]
+2025-05-10T12:23:09.4251171Z * TLSv1.3 (OUT), TLS handshake, Client hello (1):
+2025-05-10T12:23:09.4251827Z } [512 bytes data]
+2025-05-10T12:23:09.4252381Z * TLSv1.3 (IN), TLS handshake, Server hello (2):
+2025-05-10T12:23:09.4264542Z { [122 bytes data]
+2025-05-10T12:23:09.4267335Z * TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+2025-05-10T12:23:09.4268155Z { [25 bytes data]
+2025-05-10T12:23:09.4268722Z * TLSv1.3 (IN), TLS handshake, Certificate (11):
+2025-05-10T12:23:09.4269378Z { [918 bytes data]
+2025-05-10T12:23:09.4269916Z * TLSv1.3 (IN), TLS handshake, CERT verify (15):
+2025-05-10T12:23:09.4270652Z { [264 bytes data]
+2025-05-10T12:23:09.4271658Z * TLSv1.3 (IN), TLS handshake, Finished (20):
+2025-05-10T12:23:09.4273360Z { [52 bytes data]
+2025-05-10T12:23:09.4276068Z * TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+2025-05-10T12:23:09.4276867Z } [1 bytes data]
+2025-05-10T12:23:09.4277395Z * TLSv1.3 (OUT), TLS handshake, Finished (20):
+2025-05-10T12:23:09.4278024Z } [52 bytes data]
+2025-05-10T12:23:09.4292561Z * SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+2025-05-10T12:23:09.4293849Z * ALPN, server accepted to use http/1.1
+2025-05-10T12:23:09.4294796Z * Server certificate:
+2025-05-10T12:23:09.4295633Z *  subject: C=RU; ST=Moscow; L=Moscow; O=Test; CN=localhost
+2025-05-10T12:23:09.4296424Z *  start date: May  8 09:45:53 2025 GMT
+2025-05-10T12:23:09.4297344Z *  expire date: May  8 09:45:53 2026 GMT
+2025-05-10T12:23:09.4298211Z *  issuer: C=RU; ST=Moscow; L=Moscow; O=Test; CN=localhost
+2025-05-10T12:23:09.4300189Z *  SSL certificate verify result: self signed certificate (18), continuing anyway.
+2025-05-10T12:23:09.4301309Z } [5 bytes data]
+2025-05-10T12:23:09.4313453Z > GET / HTTP/1.1
+2025-05-10T12:23:09.4313969Z > Host: localhost
+2025-05-10T12:23:09.4314514Z > User-Agent: curl/7.68.0
+2025-05-10T12:23:09.4315043Z > Accept: */*
+2025-05-10T12:23:09.4315449Z > 
+2025-05-10T12:23:09.4315841Z { [5 bytes data]
+2025-05-10T12:23:09.4316397Z * TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+2025-05-10T12:23:09.4317048Z { [265 bytes data]
+2025-05-10T12:23:09.4317593Z * TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+2025-05-10T12:23:09.4318236Z { [265 bytes data]
+2025-05-10T12:23:09.4318724Z * old SSL session ID is stale, removing
+2025-05-10T12:23:09.4319293Z { [5 bytes data]
+2025-05-10T12:23:09.4319819Z * Mark bundle as not supporting multiuse
+2025-05-10T12:23:09.4320448Z < HTTP/1.1 200 OK
+2025-05-10T12:23:09.4320911Z < Server: nginx/1.27.5
+2025-05-10T12:23:09.4321414Z < Date: Sat, 10 May 2025 12:23:14 GMT
+2025-05-10T12:23:09.4321977Z < Content-Type: text/html
+2025-05-10T12:23:09.4323779Z < Content-Length: 208
+2025-05-10T12:23:09.4324431Z < Last-Modified: Sat, 10 May 2025 11:44:22 GMT
+2025-05-10T12:23:09.4325078Z < Connection: keep-alive
+2025-05-10T12:23:09.4325560Z < ETag: "681f3c16-d0"
+2025-05-10T12:23:09.4326025Z < Accept-Ranges: bytes
+2025-05-10T12:23:09.4326462Z < 
+2025-05-10T12:23:09.4350359Z { [208 bytes data]
+2025-05-10T12:23:09.4351394Z 
+2025-05-10T12:23:09.4352517Z 100   208  100   208    0     0  10400      0 --:--:-- --:--:-- --:--:-- 10400
+2025-05-10T12:23:09.4356129Z * Connection #0 to host localhost left intact
+2025-05-10T12:23:09.4504529Z <!DOCTYPE html>
+2025-05-10T12:23:09.4507153Z <html>
+2025-05-10T12:23:09.4507574Z <head>
+2025-05-10T12:23:09.4508010Z     <title>Welcome to Nginx</title>
+2025-05-10T12:23:09.4509805Z </head>
+2025-05-10T12:23:09.4510273Z <body>
+2025-05-10T12:23:09.4510741Z     <h1>Hello from Nginx with HTTPS!</h1>
+2025-05-10T12:23:09.4511715Z     <p>This is a test page served by Nginx in a Docker container.</p>
+2025-05-10T12:23:09.4512437Z </body>
+2025-05-10T12:23:09.9572154Z </html>
+2025-05-10T12:23:09.9669987Z ##[group]Run actions/upload-artifact@v4
+2025-05-10T12:23:09.9670595Z with:
+2025-05-10T12:23:09.9671014Z   name: deployment-verification
+2025-05-10T12:23:09.9671548Z   path: task4_cicd/screenshots/
+2025-05-10T12:23:09.9672071Z   if-no-files-found: warn
+2025-05-10T12:23:09.9672548Z   compression-level: 6
+2025-05-10T12:23:09.9673016Z   overwrite: false
+2025-05-10T12:23:09.9673475Z   include-hidden-files: false
+2025-05-10T12:23:09.9682338Z ##[endgroup]
+2025-05-10T12:23:10.2715179Z With the provided path, there will be 3 files uploaded
+2025-05-10T12:23:10.2718407Z Artifact name is valid!
+2025-05-10T12:23:10.2719008Z Root directory input is valid!
+2025-05-10T12:23:10.8616193Z Beginning upload of artifact content to blob storage
+2025-05-10T12:23:11.5798118Z Uploaded bytes 877
+2025-05-10T12:23:11.7463999Z Finished uploading artifact content to blob storage!
+2025-05-10T12:23:11.7468728Z SHA256 digest of uploaded artifact zip is 2dab110662bca94df41231dff14a9712dead6e03a7940c12d452cfe30e387692
+2025-05-10T12:23:11.7469928Z Finalizing artifact upload
+2025-05-10T12:23:11.9519987Z Artifact deployment-verification.zip successfully finalized. Artifact ID 3099012523
+2025-05-10T12:23:11.9521764Z Artifact deployment-verification has been successfully uploaded! Final size is 877 bytes. Artifact ID is 3099012523
+2025-05-10T12:23:11.9531151Z Artifact download URL: https://github.com/constantLine/aton-devops-test/actions/runs/14945264713/artifacts/3099012523
+2025-05-10T12:23:11.9745834Z Post job cleanup.
+2025-05-10T12:23:12.0779601Z [command]/usr/bin/git version
+2025-05-10T12:23:12.0858483Z git version 2.43.0
+2025-05-10T12:23:12.0923731Z Copying '/home/***/.gitconfig' to '/home/***/actions-runner/_work/_temp/aaf29886-c95d-4c65-a096-be6335b94774/.gitconfig'
+2025-05-10T12:23:12.0961180Z Temporarily overriding HOME='/home/***/actions-runner/_work/_temp/aaf29886-c95d-4c65-a096-be6335b94774' before making global git config changes
+2025-05-10T12:23:12.0963863Z Adding repository directory to the temporary git global config as a safe directory
+2025-05-10T12:23:12.0966075Z [command]/usr/bin/git config --global --add safe.directory /home/***/actions-runner/_work/aton-devops-test/aton-devops-test
+2025-05-10T12:23:12.1024762Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-05-10T12:23:12.1076110Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-05-10T12:23:12.1623364Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-05-10T12:23:12.1684913Z http.https://github.com/.extraheader
+2025-05-10T12:23:12.1722243Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-05-10T12:23:12.1797487Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-05-10T12:23:12.2736692Z Cleaning up orphan processes

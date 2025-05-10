@@ -1,0 +1,7 @@
+﻿2025-05-10T12:19:37.5947594Z Post job cleanup.
+2025-05-10T12:19:37.7713622Z ##[group]Removing builder
+2025-05-10T12:19:38.0084596Z [command]/usr/bin/docker buildx rm builder-7bd8a832-b5ee-4f69-8aaa-806c94f9cd39
+2025-05-10T12:19:38.3248479Z builder-7bd8a832-b5ee-4f69-8aaa-806c94f9cd39 removed
+2025-05-10T12:19:38.3286757Z ##[endgroup]
+2025-05-10T12:19:38.3287769Z ##[group]Cleaning up certificates
+2025-05-10T12:19:38.3296172Z ##[endgroup]

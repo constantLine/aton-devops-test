@@ -1,0 +1,135 @@
+﻿2025-05-10T12:23:08.8055259Z ##[group]Run ssh -i private_key $VM_USER@$VM_HOST << 'EOF'
+2025-05-10T12:23:08.8056696Z [36;1mssh -i private_key $VM_USER@$VM_HOST << 'EOF'[0m
+2025-05-10T12:23:08.8057670Z [36;1m  curl -vk https://localhost:443 > curl_output.txt[0m
+2025-05-10T12:23:08.8058438Z [36;1m  docker logs nginx-test > nginx_logs.txt[0m
+2025-05-10T12:23:08.8059084Z [36;1m  cat curl_output.txt[0m
+2025-05-10T12:23:08.8059639Z [36;1m  mkdir -p task4_cicd/screenshots[0m
+2025-05-10T12:23:08.8060316Z [36;1m  mv curl_output.txt task4_cicd/screenshots/[0m
+2025-05-10T12:23:08.8061030Z [36;1m  mv nginx_logs.txt task4_cicd/screenshots/[0m
+2025-05-10T12:23:08.8061661Z [36;1mEOF[0m
+2025-05-10T12:23:08.8062710Z [36;1mscp -i private_key $VM_USER@$VM_HOST:/home/$VM_USER/task4_cicd/screenshots/* task4_cicd/screenshots/[0m
+2025-05-10T12:23:08.8082242Z shell: /usr/bin/bash -e {0}
+2025-05-10T12:23:08.8082747Z env:
+2025-05-10T12:23:08.8130244Z   SSH_PRIVATE_KEY: ***
+2025-05-10T12:23:08.8130862Z   VM_HOST: ***
+2025-05-10T12:23:08.8131474Z   VM_USER: ***
+2025-05-10T12:23:08.8132906Z ##[endgroup]
+2025-05-10T12:23:08.8293067Z Pseudo-terminal will not be allocated because stdin is not a terminal.
+2025-05-10T12:23:09.3779291Z Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.4.0-208-generic x86_64)
+2025-05-10T12:23:09.3780524Z 
+2025-05-10T12:23:09.3780981Z  * Documentation:  https://help.ubuntu.com
+2025-05-10T12:23:09.3782602Z  * Management:     https://landscape.canonical.com
+2025-05-10T12:23:09.3783395Z  * Support:        https://ubuntu.com/advantage
+2025-05-10T12:23:09.3783930Z 
+2025-05-10T12:23:09.3784838Z   System information as of Sat 10 May 2025 12:23:13 PM UTC
+2025-05-10T12:23:09.3785408Z 
+2025-05-10T12:23:09.3786187Z   System load:                      0.13
+2025-05-10T12:23:09.3787594Z   Usage of /:                       61.0% of 9.75GB
+2025-05-10T12:23:09.3788282Z   Memory usage:                     22%
+2025-05-10T12:23:09.3788982Z   Swap usage:                       0%
+2025-05-10T12:23:09.3789597Z   Processes:                        155
+2025-05-10T12:23:09.3790244Z   Users logged in:                  1
+2025-05-10T12:23:09.3791280Z   IPv4 address for br-ac91d85bb36b: 172.18.0.1
+2025-05-10T12:23:09.3792099Z   IPv4 address for docker0:         172.17.0.1
+2025-05-10T12:23:09.3792855Z   IPv4 address for enp0s3:          ***
+2025-05-10T12:23:09.3794073Z 
+2025-05-10T12:23:09.3794640Z  * Ubuntu 20.04 LTS Focal Fossa will reach its end of standard support on 31 May
+2025-05-10T12:23:09.3795450Z  
+2025-05-10T12:23:09.3808697Z    For more details see:
+2025-05-10T12:23:09.3813313Z    https://ubuntu.com/20-04
+2025-05-10T12:23:09.3813685Z 
+2025-05-10T12:23:09.3814117Z  * Introducing Expanded Security Maintenance for Applications.
+2025-05-10T12:23:09.3815150Z    Receive updates to over 25,000 software packages with your
+2025-05-10T12:23:09.3816058Z    Ubuntu Pro subscription. Free for personal use.
+2025-05-10T12:23:09.3816558Z 
+2025-05-10T12:23:09.3816815Z      https://ubuntu.com/pro
+2025-05-10T12:23:09.3817163Z 
+2025-05-10T12:23:09.3817605Z Expanded Security Maintenance for Applications is not enabled.
+2025-05-10T12:23:09.3818255Z 
+2025-05-10T12:23:09.3818530Z 0 updates can be applied immediately.
+2025-05-10T12:23:09.3819167Z 
+2025-05-10T12:23:09.3819590Z Enable ESM Apps to receive additional future security updates.
+2025-05-10T12:23:09.3823051Z See https://ubuntu.com/esm or run: sudo pro status
+2025-05-10T12:23:09.3823991Z 
+2025-05-10T12:23:09.3824010Z 
+2025-05-10T12:23:09.3824416Z The list of available updates is more than a week old.
+2025-05-10T12:23:09.3825219Z To check for new updates run: sudo apt update
+2025-05-10T12:23:09.3825939Z New release '22.04.5 LTS' available.
+2025-05-10T12:23:09.3826597Z Run 'do-release-upgrade' to upgrade to it.
+2025-05-10T12:23:09.3827038Z 
+2025-05-10T12:23:09.3827043Z 
+2025-05-10T12:23:09.3827291Z *** System restart required ***
+2025-05-10T12:23:09.4112282Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2025-05-10T12:23:09.4113511Z                                  Dload  Upload   Total   Spent    Left  Speed
+2025-05-10T12:23:09.4114484Z 
+2025-05-10T12:23:09.4138349Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 127.0.0.1:443...
+2025-05-10T12:23:09.4139189Z * TCP_NODELAY set
+2025-05-10T12:23:09.4233514Z * Connected to localhost (127.0.0.1) port 443 (#0)
+2025-05-10T12:23:09.4236742Z * ALPN, offering h2
+2025-05-10T12:23:09.4244590Z * ALPN, offering http/1.1
+2025-05-10T12:23:09.4246316Z * successfully set certificate verify locations:
+2025-05-10T12:23:09.4247941Z *   CAfile: /etc/ssl/certs/ca-certificates.crt
+2025-05-10T12:23:09.4249881Z   CApath: /etc/ssl/certs
+2025-05-10T12:23:09.4250618Z } [5 bytes data]
+2025-05-10T12:23:09.4251168Z * TLSv1.3 (OUT), TLS handshake, Client hello (1):
+2025-05-10T12:23:09.4251824Z } [512 bytes data]
+2025-05-10T12:23:09.4252379Z * TLSv1.3 (IN), TLS handshake, Server hello (2):
+2025-05-10T12:23:09.4264522Z { [122 bytes data]
+2025-05-10T12:23:09.4267296Z * TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+2025-05-10T12:23:09.4268147Z { [25 bytes data]
+2025-05-10T12:23:09.4268718Z * TLSv1.3 (IN), TLS handshake, Certificate (11):
+2025-05-10T12:23:09.4269375Z { [918 bytes data]
+2025-05-10T12:23:09.4269913Z * TLSv1.3 (IN), TLS handshake, CERT verify (15):
+2025-05-10T12:23:09.4270644Z { [264 bytes data]
+2025-05-10T12:23:09.4271649Z * TLSv1.3 (IN), TLS handshake, Finished (20):
+2025-05-10T12:23:09.4273346Z { [52 bytes data]
+2025-05-10T12:23:09.4276052Z * TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+2025-05-10T12:23:09.4276864Z } [1 bytes data]
+2025-05-10T12:23:09.4277392Z * TLSv1.3 (OUT), TLS handshake, Finished (20):
+2025-05-10T12:23:09.4278021Z } [52 bytes data]
+2025-05-10T12:23:09.4292522Z * SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+2025-05-10T12:23:09.4293842Z * ALPN, server accepted to use http/1.1
+2025-05-10T12:23:09.4294786Z * Server certificate:
+2025-05-10T12:23:09.4295624Z *  subject: C=RU; ST=Moscow; L=Moscow; O=Test; CN=localhost
+2025-05-10T12:23:09.4296391Z *  start date: May  8 09:45:53 2025 GMT
+2025-05-10T12:23:09.4297336Z *  expire date: May  8 09:45:53 2026 GMT
+2025-05-10T12:23:09.4298206Z *  issuer: C=RU; ST=Moscow; L=Moscow; O=Test; CN=localhost
+2025-05-10T12:23:09.4300163Z *  SSL certificate verify result: self signed certificate (18), continuing anyway.
+2025-05-10T12:23:09.4301305Z } [5 bytes data]
+2025-05-10T12:23:09.4313426Z > GET / HTTP/1.1
+2025-05-10T12:23:09.4313965Z > Host: localhost
+2025-05-10T12:23:09.4314506Z > User-Agent: curl/7.68.0
+2025-05-10T12:23:09.4315040Z > Accept: */*
+2025-05-10T12:23:09.4315446Z > 
+2025-05-10T12:23:09.4315838Z { [5 bytes data]
+2025-05-10T12:23:09.4316394Z * TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+2025-05-10T12:23:09.4317045Z { [265 bytes data]
+2025-05-10T12:23:09.4317591Z * TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+2025-05-10T12:23:09.4318233Z { [265 bytes data]
+2025-05-10T12:23:09.4318721Z * old SSL session ID is stale, removing
+2025-05-10T12:23:09.4319290Z { [5 bytes data]
+2025-05-10T12:23:09.4319791Z * Mark bundle as not supporting multiuse
+2025-05-10T12:23:09.4320445Z < HTTP/1.1 200 OK
+2025-05-10T12:23:09.4320908Z < Server: nginx/1.27.5
+2025-05-10T12:23:09.4321411Z < Date: Sat, 10 May 2025 12:23:14 GMT
+2025-05-10T12:23:09.4321974Z < Content-Type: text/html
+2025-05-10T12:23:09.4323759Z < Content-Length: 208
+2025-05-10T12:23:09.4324427Z < Last-Modified: Sat, 10 May 2025 11:44:22 GMT
+2025-05-10T12:23:09.4325067Z < Connection: keep-alive
+2025-05-10T12:23:09.4325557Z < ETag: "681f3c16-d0"
+2025-05-10T12:23:09.4326022Z < Accept-Ranges: bytes
+2025-05-10T12:23:09.4326459Z < 
+2025-05-10T12:23:09.4350318Z { [208 bytes data]
+2025-05-10T12:23:09.4351385Z 
+2025-05-10T12:23:09.4352509Z 100   208  100   208    0     0  10400      0 --:--:-- --:--:-- --:--:-- 10400
+2025-05-10T12:23:09.4356112Z * Connection #0 to host localhost left intact
+2025-05-10T12:23:09.4504491Z <!DOCTYPE html>
+2025-05-10T12:23:09.4507138Z <html>
+2025-05-10T12:23:09.4507571Z <head>
+2025-05-10T12:23:09.4508008Z     <title>Welcome to Nginx</title>
+2025-05-10T12:23:09.4509148Z </head>
+2025-05-10T12:23:09.4510269Z <body>
+2025-05-10T12:23:09.4510738Z     <h1>Hello from Nginx with HTTPS!</h1>
+2025-05-10T12:23:09.4511712Z     <p>This is a test page served by Nginx in a Docker container.</p>
+2025-05-10T12:23:09.4512434Z </body>
+2025-05-10T12:23:09.9572128Z </html>
