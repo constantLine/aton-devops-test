@@ -70,14 +70,11 @@ jobs:
         run: |
           ssh -i private_key $VM_USER@$VM_HOST << 'EOF'
             curl -vk https://localhost:443 > curl_output.txt
-            curl -s -o /dev/null -w '%{http_code}' https://localhost:443 > http_code.txt
             docker logs nginx-test > nginx_logs.txt
             cat curl_output.txt
             mkdir -p task4_cicd/screenshots
             mv curl_output.txt task4_cicd/screenshots/
-            mv http_code.txt task4_cicd/screenshots/
             mv nginx_logs.txt task4_cicd/screenshots/
-            grep 200 task4_cicd/screenshots/http_code.txt
           EOF
           scp -i private_key $VM_USER@$VM_HOST:/home/$VM_USER/task4_cicd/screenshots/* task4_cicd/screenshots/
 
