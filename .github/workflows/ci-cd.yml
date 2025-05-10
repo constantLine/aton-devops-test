@@ -1,0 +1,88 @@
+name: CI/CD Pipeline for Nginx
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps
+      - name: Проверка кода
+        uses: actions/checkout@v3
+
+      - name: Настройка Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Сборка Docker-образа
+        run: |
+          cd task2_docker
+          docker build -t nginx-test:latest .
+
+      # Сохраняем образ как tar.gz
+      - name: Сохранение Docker-образа
+        run: |
+          docker save nginx-test:latest | gzip > nginx-test.tar.gz
+
+      # Загружаем образ как артефакт
+      - name: Загрузка артефакта
+        uses: actions/upload-artifact@v3
+        with:
+          name: docker-image
+          path: nginx-test.tar.gz
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Проверка кода
+        uses: actions/checkout@v3
+
+      - name: Скачивание артефакта
+        uses: actions/download-artifact@v3
+        with:
+          name: docker-image
+          path: .
+
+      - name: Деплой на ВМ
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          VM_HOST: ${{ secrets.VM_HOST }}
+          VM_USER: ${{ secrets.VM_USER }}
+        run: |
+          echo "$SSH_PRIVATE_KEY" > private_key
+          chmod 600 private_key
+          scp -i private_key nginx-test.tar.gz $VM_USER@$VM_HOST:/home/$VM_USER/
+          ssh -i private_key $VM_USER@$VM_HOST << 'EOF'
+            docker load < nginx-test.tar.gz
+            rm nginx-test.tar.gz
+            docker stop nginx-test || true
+            docker rm nginx-test || true
+            docker run -d --name nginx-test -p 80:80 -p 443:443 nginx-test:latest
+          EOF
+
+      - name: Проверка деплоя
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          VM_HOST: ${{ secrets.VM_HOST }}
+          VM_USER: ${{ secrets.VM_USER }}
+        run: |
+          ssh -i private_key $VM_USER@$VM_HOST << 'EOF'
+            curl -vk https://localhost:443 > curl_output.txt
+            curl -s -o /dev/null -w '%{http_code}' https://localhost:443 > http_code.txt
+            docker logs nginx-test > nginx_logs.txt
+            cat curl_output.txt
+            mkdir -p task4_cicd/screenshots
+            mv curl_output.txt task4_cicd/screenshots/
+            mv http_code.txt task4_cicd/screenshots/
+            mv nginx_logs.txt task4_cicd/screenshots/
+            grep 200 task4_cicd/screenshots/http_code.txt
+          EOF
+          scp -i private_key $VM_USER@$VM_HOST:/home/$VM_USER/task4_cicd/screenshots/* task4_cicd/screenshots/
+
+      - name: Загрузка результатов
+        uses: actions/upload-artifact@v3
+        with:
+          name: deployment-verification
+          path: task4_cicd/screenshots/
