@@ -33,7 +33,7 @@ jobs:
 
       # Загружаем образ как артефакт
       - name: Загрузка артефакта
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: docker-image
           path: nginx-test.tar.gz
