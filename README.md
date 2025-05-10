@@ -15,4 +15,25 @@
 - **CD**: Доставка образа на сервер через SSH (пользователь: devops) и запуск контейнера.
 - **Файлы**:
   - `.github/workflows/ci-cd.yml`: Конфигурация пайплайна.
-  - `task4_cicd/screenshots/`: Логи, вывод curl и код HTTP.
+  - `task4_cicd/screenshots/`: Логи, вывод curl и скрины результатов.
+
+
+## Задание 5: Развертывание инфраструктуры в Yandex Cloud с Terraform
+- **Описание**: ВМ с модульной структурой Terraform.
+- **Инфраструктура**:
+  - ВМ: 2 ядра, 4 ГБ, Ubuntu 22.04.
+  - Диск: 30 ГБ, network-ssd.
+  - Сеть: VPC, подсеть (192.168.10.0/24), публичный IP.
+  - Группа безопасности: Порты 22, 80, 443.
+  - User-data: Пользователь `devops`, Docker.
+- **Модули**:
+  - `compute`: ВМ.
+  - `disk`: Диск.
+  - `network`: VPC и подсеть.
+  - `security_group`: Группа безопасности.
+- **Файлы**:
+  - `task5_terraform/main.tf`: Основной файл.
+  - `task5_terraform/terraform.tfvars , task5_terraform/variables.tf`: Необходимые переменные.
+  - `task5_terraform/modules/`: Модули.
+  - `task5_terraform/screenshots/`: Скриншоты.
+- **Примечание**: Конфигурация адаптирована для task4 (докер, пользователь, порты).

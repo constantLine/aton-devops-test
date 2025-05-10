@@ -1,0 +1,5 @@
+terraform-meta/
+task5_terraform/terraform.tfstate.backup
+task5_terraform/terraform.tfstate
+task5_terraform/.terraform.lock.hcl
+task5_terraform/.terraform
