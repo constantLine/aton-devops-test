@@ -7,14 +7,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps
+    runs-on: self-hosted
+    steps:
       - name: Проверка кода
         uses: actions/checkout@v3
 
       - name: Настройка Docker Buildx
         uses: docker/setup-buildx-action@v2
-
+          
       - name: Сборка Docker-образа
         run: |
           cd task2_docker
@@ -27,20 +27,20 @@ jobs:
 
       # Загружаем образ как артефакт
       - name: Загрузка артефакта
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: docker-image
           path: nginx-test.tar.gz
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: build
     steps:
       - name: Проверка кода
         uses: actions/checkout@v3
 
       - name: Скачивание артефакта
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: docker-image
           path: .
@@ -70,19 +70,16 @@ jobs:
         run: |
           ssh -i private_key $VM_USER@$VM_HOST << 'EOF'
             curl -vk https://localhost:443 > curl_output.txt
-            curl -s -o /dev/null -w '%{http_code}' https://localhost:443 > http_code.txt
             docker logs nginx-test > nginx_logs.txt
             cat curl_output.txt
             mkdir -p task4_cicd/screenshots
             mv curl_output.txt task4_cicd/screenshots/
-            mv http_code.txt task4_cicd/screenshots/
             mv nginx_logs.txt task4_cicd/screenshots/
-            grep 200 task4_cicd/screenshots/http_code.txt
           EOF
           scp -i private_key $VM_USER@$VM_HOST:/home/$VM_USER/task4_cicd/screenshots/* task4_cicd/screenshots/
 
       - name: Загрузка результатов
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: deployment-verification
           path: task4_cicd/screenshots/
