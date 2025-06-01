@@ -10,7 +10,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Проверка кода
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Настройка Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -37,7 +37,7 @@ jobs:
     needs: build
     steps:
       - name: Проверка кода
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Скачивание артефакта
         uses: actions/download-artifact@v4
